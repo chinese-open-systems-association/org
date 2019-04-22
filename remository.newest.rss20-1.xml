@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="FeedCreator 1.7.2" -->
+<rss version="2.0">
+	<channel>
+		<title>Recent Files</title>
+		<description>Latest from our file repository</description>
+		<link>http://www.cosa.org.tw/index.php?option=com_remository&amp;Itemid=28</link>
+		<lastBuildDate>Mon, 22 Apr 2019 13:57:58 +0100</lastBuildDate>
+		<generator>FeedCreator 1.7.2</generator>
+		<image>
+			<url>http://www.cosa.org.tw/components/com_remository/images/header.gif</url>
+			<title>COSA - 中華民國開放系統協會 :: 文件庫</title>
+			<link>http://www.cosa.org.tw/index.php?option=com_remository&amp;Itemid=28</link>
+			<description>COSA - 中華民國開放系統協會</description>
+		</image>
+		<item>
+			<title>個人入會申請表 (2016-06-20)</title>
+			<link>http://www.cosa.org.tw/index.php?option=com_remository&amp;amp;Itemid=28&amp;amp;func=fileinfo&amp;amp;id=2</link>
+			<description></description>
+			<pubDate>Sun, 19 Jun 2016 16:00:00 +0100</pubDate>
+			<guid>http://www.cosa.org.tw/index.php?option=com_remository&amp;amp;Itemid=28&amp;amp;func=fileinfo&amp;amp;id=2</guid>
+		</item>
+		<item>
+			<title>團體入會申請表 (2016-06-20)</title>
+			<link>http://www.cosa.org.tw/index.php?option=com_remository&amp;amp;Itemid=28&amp;amp;func=fileinfo&amp;amp;id=3</link>
+			<description></description>
+			<pubDate>Sun, 19 Jun 2016 16:00:00 +0100</pubDate>
+			<guid>http://www.cosa.org.tw/index.php?option=com_remository&amp;amp;Itemid=28&amp;amp;func=fileinfo&amp;amp;id=3</guid>
+		</item>
+	</channel>
+</rss>

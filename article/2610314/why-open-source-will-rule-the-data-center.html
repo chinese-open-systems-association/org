@@ -1,0 +1,6586 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+		
+	
+	
+	
+	
+
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html lang="en" class="lt-ie9 lt-ie8 lt-ie7" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="lt-ie10 lt-ie9 lt-ie8" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="lt-ie10 lt-ie9" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="lt-ie10" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"> <![endif]-->
+<!--[if gt IE 9]><!--> <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"> <!--<![endif]-->
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<head>
+	<link rel="alternate" hreflang="en" href="https://www.infoworld.com/article/2610314/why-open-source-will-rule-the-data-center.html" />
+	
+	
+	
+	<!-- metas -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />		
+	<title>Why open source will rule the data center | InfoWorld</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+	<script>
+	function getQueryVariable(variable) {
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i=0;i<vars.length;i++) {
+			var pair = vars[i].split("=");
+			if(pair[0] == variable){return pair[1];}
+		}
+		return(false);
+	}
+	</script>
+	
+	<!-- ad-related js -->
+	<script src="/www/js/jquery/jquery-1.10.2.min.js"></script>
+	
+	<script type="text/javascript" src="/www/js/jquery/jquery_cookie.js"></script>
+	
+	
+	
+	<script type="text/javascript" src="/www/js/apollo-locales.js?v=20190415112431"></script>
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+!function(t,o,e){e=t.createElement(o),t=t.getElementsByTagName(o)[0],e.async=1,e.src="https://spiffymachine.com/v2/0/lvxsdFZg0uTHB9ES73zm5uTHipS4vHdgjPRvwkk2Ve4pEZXge-gjK_3VffP2g4DhZF37A",t.parentNode.insertBefore(e,t)}(document,"script"),function(t,o){t[o]=t[o]||function(){(t[o].q=t[o].q||[]).push(arguments)}}(document,window,"script","admiral");!function(t,e,a,n){function o(t){try{return t=localStorage.getItem("v4ac1eiZr0"),t&&t.split(",")[4]>0}catch(e){}return!1}function r(){var n=o();if(n){var r=t[e].pubads();typeof r.setTargeting===a&&r.setTargeting("admiral-engaged","true")}}n=t[e]=t[e]||{},n.cmd=n.cmd||[],typeof n.pubads===a?r():typeof n.cmd.unshift===a?n.cmd.unshift(r):n.cmd.push(r)}(window,"googletag","function");;;;!function(t,e,a,n){function o(){if(!window.frames[n]){var e=t.body;if(e){var a=t.createElement("iframe");a.style="display:none",a.name=n,e.appendChild(a)}else setTimeout(o,5)}}function r(){for(var t=[],a=0;a<arguments.length;a++)t.push(arguments[a]);i.q=i.q||[],"ping"===t[0]?t[2]({gdprAppliesGlobally:e.__cmpGdprAppliesGlobally||!1,cmpLoaded:!1},!0):t.length&&i.q.push(t)}function c(t){try{return JSON.parse(t)}catch(e){}}function s(t){if(t){var e,a="__cmpCall",n="string"==typeof t.data&&t.data.indexOf(a)>=0;e=n?(c(t.data)||{})[a]:(t.data||{})[a],e&&i(e.command,e.parameter,function(a,o){var r={__cmpReturn:{returnValue:a,success:o,callId:e.callId}};t.source.postMessage(n?JSON.stringify(r):r,"*")})}}var i=e[a];o(),"function"!=typeof i&&(i=e[a]=r,e.addEventListener?e.addEventListener("message",s,!1):e.attachEvent&&e.attachEvent("onmessage",s))}(document,window,"__cmp","__cmpLocator");;
+</script>
+
+<script>
+window.admiral = window.admiral || function() {(admiral.q = admiral.q || []).push(arguments)};
+
+
+var consent = consent || {};
+consent.isEU = consent.isEU || null;
+consent.personalization = consent.personalization || null;
+consent.ads = consent.ads || {};
+consent.ads.queue = consent.ads.queue || [];
+
+consent.infostorage = consent.infostorage || {};
+consent.infostorage.queue = consent.infostorage.queue || [];
+
+consent.adsel = consent.adsel || {};
+consent.adsel.queue = consent.adsel.queue || [];
+
+consent.contentsel = consent.contentsel || {};
+consent.contentsel.queue = consent.contentsel.queue || [];
+
+consent.socmedia = consent.socmedia || {};
+consent.socmedia.queue = consent.socmedia.queue || [];
+
+consent.tealium = consent.tealium || {};
+consent.tealium.queue = consent.tealium.queue || [];
+
+consent.digitalelement = consent.digitalelement || {};
+consent.digitalelement.queue = consent.digitalelement.queue || [];
+
+window.admiral('addEventListener', 'cmp.loaded', function(e){
+	console.log('*****GDPR: EU user?', e);
+	consent.isEU = e.euVisitor;
+	if (!consent.isEU) {
+		console.log('*****GDPR: not EU, run ALL queues!');
+		consent.personalization=true;
+		$(window).trigger("runConsent", [consent.ads.queue]);
+		$(window).trigger("runConsent", [consent.infostorage.queue]);
+		$(window).trigger("runConsent", [consent.adsel.queue]);
+		$(window).trigger("runConsent", [consent.contentsel.queue]);
+		$(window).trigger("runConsent", [consent.socmedia.queue]);
+		$(window).trigger("runConsent", [consent.digitalelement.queue]);
+		console.log('running digitalelement queue');
+		$(window).trigger("runConsent", [consent.tealium.queue]);
+		//console.log ('running tealium queue');
+	}
+	else if (e.consentKnown == true) { // else if.. visitor is from EU and consent is known...
+		window.admiral('get', 'cmp.consent', function(e) {
+			consent.personalization = e.publisherPurposes['2'];
+
+			//console.log('*****GDPR: we know your personalization setting (' + e.publisherPurposes['2'] + '), running ad queue.');
+			//console.log('*****GDPR: we know your info storage setting (' + e.publisherPurposes['1'] + '), running queue if TRUE.');
+			//console.log('*****GDPR: we know your ad selection setting (' + e.publisherPurposes['3'] + '), running queue if TRUE.');
+			//console.log('*****GDPR: we know your content selection setting (' + e.publisherPurposes['4'] + '), running queue if TRUE.');
+			//console.log('*****GDPR: we know your social media setting. It is (' + e.publisherCustomPurposes['25'] + '), running queue if TRUE.');
+			
+			$(window).trigger("runConsent", [consent.ads.queue]);
+			if (e.publisherPurposes['1']) { // if information storage consent is TRUE run queue
+				//console.log('***** Known consent and true - run info storage queue');
+				$(window).trigger("runConsent", [consent.infostorage.queue]);
+			}
+			if (e.publisherPurposes['3']) { // if ad selection consent is TRUE run queue
+				//console.log('***** Known consent and true - run ad selection queue');
+				$(window).trigger("runConsent", [consent.adsel.queue]);
+			}
+			if (e.publisherPurposes['4']) { // if content selection consent is TRUE run queue
+				//console.log('***** Known consent and true - run content selection queue');
+				$(window).trigger("runConsent", [consent.contentsel.queue]);
+			}
+			if (e.publisherCustomPurposes['25']) { // if social media consent is TRUE run queue
+				//console.log('***** Known consent and true - run social media queue');
+				$(window).trigger("runConsent", [consent.socmedia.queue]);
+			}
+			
+			//special case for Tealium
+			if (e.publisherPurposes['1'] && e.publisherPurposes['2'] && e.publisherPurposes['3'] && e.publisherPurposes['4'] && e.publisherPurposes['5'] && e.vendors['522']) {
+				//console.log('***** Known consent and true - run tealium queue');
+				$(window).trigger("runConsent", [consent.tealium.queue]);
+			}
+			
+			//special case for Digital Element
+			if (e.publisherPurposes['2'] && e.publisherPurposes['3'] && e.publisherPurposes['4'] && e.publisherPurposes['5']) {
+				console.log('***** Known consent and true - run digitalelement queue');
+				$(window).trigger("runConsent", [consent.digitalelement.queue]);
+			}
+				
+			bindReshowCmp();
+		});
+	}
+	else {//else consent is not known
+		try {
+			var tealiumConsent;
+	    	__cmp('getPublisherConsents',[],function(publisherConsents,success){
+	    		if (typeof publisherConsents.standardPurposes['2'] !== 'undefined' && publisherConsents.standardPurposes['2']) {
+	    			console.log('*****GDPR: personalization allowed, start running personalized ads');	
+	    		}
+	    		else if (typeof publisherConsents.standardPurposes['2'] !== 'undefined' && !publisherConsents.standardPurposes['2']) {
+	    			console.log('*****GDPR: personalization not allowed, start running non-personalized ads');
+	    		}
+	    		consent.personalization = publisherConsents.standardPurposes['2'];
+	    		$(window).trigger("runConsent", [consent.ads.queue]);
+	    		
+	    		if (typeof publisherConsents.standardPurposes['1'] !== 'undefined' && publisherConsents.standardPurposes['1']) {
+	    			//console.log('*****GDPR: getPublishersConsent - information storage allowed, run infostorage queue');
+	    			$(window).trigger("runConsent", [consent.infostorage.queue]);
+	    		} else if (typeof publisherConsents.standardPurposes['1'] !== 'undefined' && !publisherConsents.standardPurposes['1']) {
+	    			console.log('*****GDPR: getPublishersConsent - information storage NOT allowed, do not run infostorage queue');
+	    		}
+	    		if (typeof publisherConsents.standardPurposes['3'] !== 'undefined' && publisherConsents.standardPurposes['3']) {
+	    			//console.log('*****GDPR: getPublishersConsent - ad selection allowed, run adsel queue');
+	    			$(window).trigger("runConsent", [consent.adsel.queue]);
+	    		} else if (typeof publisherConsents.standardPurposes['3'] !== 'undefined' && !publisherConsents.standardPurposes['3']) {
+	    			console.log('*****GDPR: getPublishersConsent - ad selection NOT allowed, do not run adsel queue');
+	    		}
+	    		if (typeof publisherConsents.standardPurposes['4'] !== 'undefined' && publisherConsents.standardPurposes['4']) {
+	    			//console.log('*****GDPR: getPublishersConsent - content selection allowed, run contentsel queue');
+	    			$(window).trigger("runConsent", [consent.contentsel.queue]);
+	    		} else if (typeof publisherConsents.standardPurposes['4'] !== 'undefined' && !publisherConsents.standardPurposes['4']) {
+	    			console.log('*****GDPR: getPublishersConsent - content selection NOT allowed, do not run contentsel queue');
+	    		}
+	    		if (typeof publisherConsents.customPurposes['25'] !== 'undefined' && publisherConsents.customPurposes['25']) {
+	    			console.log('*****GDPR: getPublishersConsent - social media allowed, run socmedia queue');
+	    			$(window).trigger("runConsent", [consent.socmedia.queue]);
+	    		} else if (typeof publisherConsents.customPurposes['25'] !== 'undefined' && !publisherConsents.customPurposes['25']) {
+	    			console.log('*****GDPR: getPublishersConsent - social media NOT allowed, do not run socmedia queue');
+	    		}
+	    		
+	    		//checking for Tealium purpose
+	    		if (typeof publisherConsents.standardPurposes['1'] !== 'undefined' && publisherConsents.standardPurposes['1'] &&
+	    				typeof publisherConsents.standardPurposes['2'] !== 'undefined' && publisherConsents.standardPurposes['2'] &&
+	    				typeof publisherConsents.standardPurposes['3'] !== 'undefined' && publisherConsents.standardPurposes['3'] &&
+	    				typeof publisherConsents.standardPurposes['4'] !== 'undefined' && publisherConsents.standardPurposes['4'] &&
+	    				typeof publisherConsents.standardPurposes['5'] !== 'undefined' && publisherConsents.standardPurposes['5']) {
+	    			tealiumConsent = true;
+    				//console.log('consent for Tealium\'s purposes'); 
+    				
+    				//checking for Tealium consent
+    		    	__cmp('getVendorConsents',[],function(vendorConsents,success){ 
+    		    			if (typeof vendorConsents.vendorConsents['522'] === 'undefined' || vendorConsents.vendorConsents['522'] === false) {
+    		    				tealiumConsent = false;
+    		    				//console.log('no consent for Tealium the vendor'); 
+    		    			}
+    		    	});
+	    		}
+	    		else {
+	    			tealiumConsent = false; 
+	    			//console.log('no consent for Tealium\'s purposes');
+	    		}
+	    		
+	    		if (typeof tealiumConsent !== 'undefined' && tealiumConsent) {
+		    		$(window).trigger("runConsent", [consent.tealium.queue]);
+		    		//console.log ('running tealium queue');
+		    	}
+	    		
+	    		if (typeof publisherConsents.standardPurposes['2'] !== 'undefined' && publisherConsents.standardPurposes['2'] &&
+	    				typeof publisherConsents.standardPurposes['3'] !== 'undefined' && publisherConsents.standardPurposes['3'] &&
+	    				typeof publisherConsents.standardPurposes['4'] !== 'undefined' && publisherConsents.standardPurposes['4'] &&
+	    				typeof publisherConsents.standardPurposes['5'] !== 'undefined' && publisherConsents.standardPurposes['5']) {
+	    			$(window).trigger("runConsent", [consent.digitalelement.queue]);
+	    			console.log ('running digitalelement queue');
+	    		}
+			});
+	    	
+	    	bindReshowCmp();
+	    }
+	    catch (e) {
+	    	console.log(e);
+	    }
+	}
+});
+
+window.admiral('addEventListener', 'cmp.updated', function(e){
+	var tConsent;
+	__cmp('getPublisherConsents',[],function(publisherConsents,success){	
+		//console.log('*****GDPR: Consent updated (cmp.updated fired). personalization ok? ',typeof publisherConsents.standardPurposes['2'] !== 'undefined' && publisherConsents.standardPurposes['2']);
+		//console.log('*****GDPR: Consent updated (cmp.updated fired). information storage ok? ',typeof publisherConsents.standardPurposes['1'] !== 'undefined' && publisherConsents.standardPurposes['1']);
+		//console.log('*****GDPR: Consent updated (cmp.updated fired). ad selection ok? ',typeof publisherConsents.standardPurposes['3'] !== 'undefined' && publisherConsents.standardPurposes['3']);
+		//console.log('*****GDPR: Consent updated (cmp.updated fired). content selection ok? ',typeof publisherConsents.standardPurposes['4'] !== 'undefined' && publisherConsents.standardPurposes['4']);
+		console.log('*****GDPR: Consent updated (cmp.updated fired). social media ok? ',typeof publisherConsents.customPurposes['25'] !== 'undefined' && publisherConsents.customPurposes['25']);
+		if (typeof publisherConsents.standardPurposes['1'] !== 'undefined' && publisherConsents.standardPurposes['1']) {
+			$(window).trigger("runConsent", [consent.infostorage.queue]);
+		}
+		if (typeof publisherConsents.standardPurposes['3'] !== 'undefined' && publisherConsents.standardPurposes['3']) {
+			$(window).trigger("runConsent", [consent.adsel.queue]);
+		}
+		if (typeof publisherConsents.standardPurposes['4'] !== 'undefined' && publisherConsents.standardPurposes['4']) {
+			$(window).trigger("runConsent", [consent.contentsel.queue]);
+		}
+		if (typeof publisherConsents.customPurposes['25'] !== 'undefined' && publisherConsents.customPurposes['25']) {
+			$(window).trigger("runConsent", [consent.socmedia.queue]);
+		}
+		
+		//checking for Tealium purpose
+		if (typeof publisherConsents.standardPurposes['1'] !== 'undefined' && publisherConsents.standardPurposes['1'] &&
+				typeof publisherConsents.standardPurposes['2'] !== 'undefined' && publisherConsents.standardPurposes['2'] &&
+				typeof publisherConsents.standardPurposes['3'] !== 'undefined' && publisherConsents.standardPurposes['3'] &&
+				typeof publisherConsents.standardPurposes['4'] !== 'undefined' && publisherConsents.standardPurposes['4'] &&
+				typeof publisherConsents.standardPurposes['5'] !== 'undefined' && publisherConsents.standardPurposes['5']) {
+			tealiumConsent = true;
+			//console.log('consent for Tealium\'s purposes'); 
+			
+			//checking for Tealium consent
+	    	__cmp('getVendorConsents',[],function(vendorConsents,success){ 
+	    			if (typeof vendorConsents.vendorConsents['522'] === 'undefined' || vendorConsents.vendorConsents['522'] === false) {
+	    				tealiumConsent = false;
+	    				//console.log('no consent for Tealium the vendor'); 
+	    			}
+	    	});
+		}
+		else {
+			tealiumConsent = false; 
+			//console.log('no consent for Tealium\'s purposes');
+		}
+		
+		if (typeof tealiumConsent !== 'undefined' && tealiumConsent) {
+    		$(window).trigger("runConsent", [consent.tealium.queue]);
+    		//console.log ('running tealium queue');
+    	}
+		
+		if (typeof publisherConsents.standardPurposes['2'] !== 'undefined' && publisherConsents.standardPurposes['2'] &&
+				typeof publisherConsents.standardPurposes['3'] !== 'undefined' && publisherConsents.standardPurposes['3'] &&
+				typeof publisherConsents.standardPurposes['4'] !== 'undefined' && publisherConsents.standardPurposes['4'] &&
+				typeof publisherConsents.standardPurposes['5'] !== 'undefined' && publisherConsents.standardPurposes['5']) {
+			$(window).trigger("runConsent", [consent.digitalelement.queue]);
+			console.log ('running digitalelement queue');
+		}
+	});	
+	$(window).trigger("runConsent", [consent.ads.queue]);	
+});
+
+$(window).on("runConsent", function(event, queueToRun) {
+		watchConsentQueue(queueToRun)
+});
+
+function runQueue(queue){
+	for (var x=0;x<queue.length;x++) {
+		var nextFn = queue.shift();
+		nextFn();
+		//console.log('*****GDPR: running queue');
+	}	
+}
+
+function watchConsentQueue(queue){
+	setInterval(function() { runQueue(queue); },100);
+}
+function bindReshowCmp() {
+	var url = document.location.pathname;
+	if (url.indexOf("/about/member-preferences") > -1) {
+		$(".cmpSettings").show();
+		$(".reshowLink").on("click", function(e) {
+			e.preventDefault();
+			window.admiral('show','cmp.settings');
+		});
+	}
+}
+</script>
+
+
+
+	
+	
+		<script src="//cdn.blueconic.net/idg.js"></script>
+	
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+<script>
+// this javascript is for retrieving locale-specific ad units for DFP - see mapping in apollo-locales.js
+// getting locale and editions for the site the reader is viewing
+let brandAbbrev = "ifw";
+//let myLocale = getLocale(); // getting locale on page load from URL, IP, geolocation - this will always be something. If 0, it's the global/default/core view.
+let countryCode = "";
+let getSlugFromId = getApolloLocaleIdMap();
+let getIdFromSlug = getApolloLocaleSlugMap();
+
+// if selectedLocale cookie exists, get locale
+if (typeof getSelectedLocale() !== 'undefined'  && getSelectedLocale() === getLocale()) { // get locale from cookie if available otherwise, use another locale source (from geolocation, url slug, etc.)
+ 	countryCode = getSlugFromId[getSelectedLocale()];
+} else {
+	countryCode = getSlugFromId[getLocale()];
+}
+//console.log("+++ 1) in locales.editions.jsp - COUNTRY CODE IS DEFINED AS: "+countryCode+"+++");
+// if countryCode is empty string at this point, it means localeId = 0 which is global (default/core)...
+if (countryCode == "") {
+	countryCode = "us"; // country code for default global is currently US
+}
+//console.log("====INSIDE locales-editions.jsp - getSelectedLocale() = " + getSelectedLocale() + " and getLocale() = " + getLocale() + " and countryCode = " + countryCode);
+//US social media accounts are the default if locale cannot be determined
+var twitterUrl = "";
+var linkedInUrl = "";
+var facebookUrl = "";
+var twitterHandle = "";
+if (countryCode === 'asean') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+}
+if (countryCode === 'uk') {
+	twitterUrl = "";
+	linkedInUrl = "";
+	facebookUrl = "";
+	twitterHandle = "";
+}
+
+//US business unit is the default if locale cannot be determined
+var busUnit = "";
+//cookie policy page
+var localeEdition = "";
+var busUnitAddress = "";
+if (countryCode === 'asean') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+if (countryCode === 'uk') {
+	busUnit = "";
+	localeEdition = "";
+	busUnitAddress = "";
+}
+</script>
+
+	
+	
+	<script src="/www/js/init_device.js"></script>
+	
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="/www/js/ads/gpt_includes.js?v=20190415112431"></script>
+
+<script type="text/javascript">
+	if (adLayer==null || adLayer=='undefined') {
+		var adLayer=[];
+	}
+	
+		
+			adLayer["itemType"]="article";
+		
+		
+	
+</script>
+	
+<script type="text/javascript">
+	// Set up ad related variables
+	try {
+		IDG.GPT.unitName = "/8456/IDG.US_E_Infoworld.com";
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}
+
+	try {
+		IDG.GPT.unitName = IDG.GPT.unitName + "/" + "open-source-tools_section";
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}
+	// global variables
+	var global_ShowSuper = true;
+	var global_ShowHero = false;
+	
+	//XFP global targeting, more targeting thm_pre
+	var url = window.location.href;
+	if(url.indexOf("?")>1){
+		url=url.split('?')[0];
+	}
+	
+
+	try {
+		IDG.GPT.addTarget("URL", encodeURIComponent(url));
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}
+	try {IDG.GPT.addTarget("zone", 'article-blog/open-source-tools');}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}
+	try{IDG.GPT.addTarget("channel", 'open-source-tools');}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}try{IDG.GPT.addTarget("blogId", '1209');}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}try{IDG.GPT.addTarget("articleId", '2610314');}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}try{IDG.GPT.addTarget("type", 'analysis');}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}try{IDG.GPT.addTarget("typeId", '9');}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}try{IDG.GPT.addTarget("templateType", 'article-default');}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}
+	
+	try {IDG.GPT.addTarget("categoryIds", [3248,3353,3394,3576,3747]);}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}
+	try{IDG.GPT.addTarget("categorySlugs", ['open-source-tools','linux','data-center','it-strategy','software-defined-networking']);}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}
+	try {IDG.GPT.addTarget("goldenIds", [993,235,527,561,442]);}	catch (exception) {console.log ("google_dfp can't use IDG.GPT "+ exception);}
+	try {
+		if (null != IDG.GPT.getQsVal("env")) {		
+			IDG.GPT.addTarget("env", IDG.GPT.getQsVal("env").replace(/\W/g, "") );
+		}
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}	
+	
+		try {
+			IDG.GPT.addTarget("author", 'Michael Bushong');
+		}
+		catch (exception) {
+			console.log ("google_dfp can't use IDG.GPT "+ exception);
+		}
+	
+	
+	
+		
+
+	try {
+		IDG.GPT.addTarget("page_type", '');
+	}
+	catch (exception) {
+		console.log ("google_dfp can't use IDG.GPT "+ exception);
+	}	
+
+	
+		try {
+			IDG.GPT.addTarget("blog_name", 'New Tech Forum');
+		}
+		catch (exception) {
+			console.log ("google_dfp can't use IDG.GPT "+ exception);
+		}
+	
+	
+	
+	
+		try {
+			IDG.GPT.addTarget("insiderContent", 'false');
+		}
+		catch (exception) {
+			console.log ("google_dfp can't use IDG.GPT "+ exception);
+		}
+	
+	
+	
+	
+	
+</script>
+
+
+
+<script type="text/javascript">
+	
+	
+	
+	
+		
+		
+		
+		
+		
+		
+		
+		
+	
+	
+	
+	
+</script>
+  
+<script src="/www.idge/js/thm_pre.js?v=20190415112431"></script>
+
+
+	
+	
+		<script>
+		// IDGMPM-16419 - moved out of adsel queue for IDGMPM-16933
+		googletag.cmd.push(function() {
+		  if (googletag.pubads().getTargeting('permutive').length == 0) {
+		    var kvs = localStorage.getItem('_pdfps');
+		    googletag.pubads().setTargeting('permutive', kvs ? JSON.parse(kvs) : []);
+		    console.log('ad targeting permutive kvs: ', kvs);
+		  }
+		});
+		</script>
+	
+
+<script type="text/javascript" src="/www/js/ads/gpt_starter.js?1234"></script>
+	<script>
+		loadGPT();
+	</script>
+
+	
+
+	
+		<script type="text/javascript" src="/www/js/ads/gpt_launcher.js"></script>
+		<script>$(window).trigger("runConsent", [IDG.GPT.displayQueue]);</script>
+	
+
+
+
+	
+	
+	
+		
+				
+		
+		
+		
+	
+
+	<link rel="canonical" href="https://www.infoworld.com/article/2610314/why-open-source-will-rule-the-data-center.html" />
+	
+	
+		
+	
+
+	<meta itemprop="url" content="https://www.infoworld.com/article/2610314/why-open-source-will-rule-the-data-center.html" />
+	<meta name="description" content="According to Michael Bushong of networking startup Plexxi, three commonly occurring conditions ensure that open source software will steadily widen its data center footprint" />
+	
+		
+			<meta name="DC.date.issued" content="2014-02-05T06:00-05:00" />
+			<meta name="date" content="2014-02-05" />
+			
+		
+		
+		
+		
+	
+	
+	<link rel="amphtml" href="https://www.infoworld.com/article/2610314/why-open-source-will-rule-the-data-center.amp.html" />
+	
+		
+		
+		
+			
+			
+				
+			
+			
+			
+		
+	
+	
+		
+		
+			<meta property="og:title" content="Why open source will rule the data center">
+		
+	
+	<meta property="og:description" content="According to Michael Bushong of networking startup Plexxi, three commonly occurring conditions ensure that open source software will steadily widen its data center footprint">	
+	
+	
+		
+		
+			<meta property="og:image" content="https://idge.staticworld.net/ifw/IFW_logo_social_300x300.png" />
+			<meta itemprop="image" content="https://idge.staticworld.net/ifw/IFW_logo_social_300x300.png">
+			<meta itemprop="thumbnailURl" content="https://idge.staticworld.net/ifw/IFW_logo_social_300x300.png" />
+			<link rel="image_src" href="https://idge.staticworld.net/ifw/IFW_logo_social_300x300.png" />
+			<meta name="twitter:image" content="https://idge.staticworld.net/ifw/IFW_logo_social_300x300.png" />
+		
+	
+	
+		
+			<meta property="og:type" content="article" />
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			<meta name="author" content="Michael Bushong">
+			
+			
+			
+			
+			
+		
+		 
+		
+	<meta property="og:site_name" content="InfoWorld" />
+	<meta property="fb:app_id" content="196366870381968" />
+	
+		
+			<meta property="og:url" content="https://www.infoworld.com/article/2610314/why-open-source-will-rule-the-data-center.html">
+		
+		
+	
+	
+	<!-- Use Twitter Summary Card with Large Image for articles and videos -->
+	
+		
+				<meta name="twitter:card" content="summary_large_image">
+		
+		
+	
+
+	<meta name="twitter:site" content="@infoworld">
+	<meta name="twitter:description" content="According to Michael Bushong of networking startup Plexxi, three commonly occurring conditions ensure that open source software will steadily widen its data center footprint">
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<meta name="rating" content="General">
+	
+	<meta name="robots" content="NOODP,NOYDIR" />
+	
+	
+		<meta name="google-site-verification" content="RD0aa-ox1hse8Hjz2fU6KzOMnGyqLwYUv13rGucjtjA" />
+	
+	
+	
+		<meta name="msvalidate.01" content="04917178B598F0648B9BAD693FEC29A3" />
+	
+		
+	<!-- pagination -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<link id="mobile-size" rel="stylesheet" href="/www.idge/css/inline-header-mobile.css?v=20190415112431" />
+		
+		<script>
+			if (window.matchMedia("(min-width: 768px)").matches) {
+				document.getElementById('mobile-size').insertAdjacentHTML('afterend', '<link id="desktop-size" rel="stylesheet" href="/www.idge/css/inline-header.css?v=20190415112431" />');
+			}
+		</script>
+		
+			
+				<link rel="stylesheet" href="/www.idge.ifw/css/inline-header.css?v=20190415112431" />
+			
+		
+	
+	
+	<!-- css -->
+	<link rel="stylesheet" href="/www.idge/css/normalize.css" />
+	<link rel="stylesheet" href="/www.idge/css/prettify.css" />
+	
+		<link rel="stylesheet" href="/www.idge.ans/js/select2-3.5.0/select2.css" />
+	
+	
+	
+		
+			
+			
+			
+			
+				
+					
+						
+						
+						
+							<link rel="stylesheet" href="/www/css/article.css?v=20190415112431" />
+						
+					
+					
+					
+					
+			
+				
+		
+		
+		
+			<link rel="stylesheet" href="/www.idge/css/insider-promo-styles.css?v=20190415112431" />
+		
+		<link rel="stylesheet" href="/www.idge/css/print.css" media="print" />
+		
+	
+	
+		
+			
+			
+				
+				
+					<link rel="stylesheet" href="/www.idge.ifw/css/article.css?v=20190415112431" />
+				
+			
+		
+	
+	
+	<link rel="stylesheet" href="/www.idge/css/webfonts/ss-social.css" />
+	<link rel="stylesheet" href="/www.idge/css/webfonts/ss-standard.css" />
+	<!--[if lte IE 8]>  
+		<link href="/www.idge/css/webfonts/ss-ie8.css" rel="stylesheet" />
+	<![endif]--> 
+	
+	
+	
+	
+		
+	
+	
+	
+	
+	
+		<script type="text/javascript" src="//fonts.staticworld.net/fmz2tqe.js"></script>
+		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+	
+	
+	<!--  fav and touch icons -->
+	<link rel="shortcut icon" type="image/x-icon" href="https://idge.staticworld.net/ifw/favicon.ico"/>
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://idge.staticworld.net/ifw/IFW_logo_social_144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://idge.staticworld.net/ifw/IFW_logo_social_114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://idge.staticworld.net/ifw/IFW_logo_social_72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://idge.staticworld.net/ifw/IFW_logo_social_57x57.png" />
+	<link rel="apple-touch-icon" href="https://idge.staticworld.net/ifw/IFW_logo_social_300x300.png" />
+	
+	
+		<script src="/www.idge.ans/js/select2-3.5.0/select2.js"></script>
+	
+	
+	
+	
+	
+	
+		<script>
+		   $(document).ready(function() { 
+			   $("select#country").select2({
+			    	placeholder: "country",
+			    	minimumResultsForSearch: Infinity,
+			    	allowClear: true
+			    });
+			   $("select#state").select2({
+			    	placeholder: "state",
+			    	minimumResultsForSearch: Infinity,
+			    	allowClear: true
+			    });
+			    $("#jobPosition").select2({
+			    	placeholder: "position",
+			    	minimumResultsForSearch: Infinity,
+			    	allowClear: true
+			    }); 
+			   	$("#jobFunction").select2({
+			   		placeholder: "function",
+			   		minimumResultsForSearch: Infinity,
+			    	allowClear: true
+			   	}); 
+			   	$("#companySize").select2({
+			   		placeholder: "company size",
+			   		minimumResultsForSearch: Infinity,
+			    	allowClear: true
+			   	});
+			   	$("#industry").select2({
+			   		placeholder: "industry",
+			   		minimumResultsForSearch: Infinity,
+			    	allowClear: true
+			   	}); 
+		   });
+	   </script>
+   	    
+   	     
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+var brandCode = "ifw";
+var brandName="InfoWorld";
+var brandId = "7";
+var regDebugLog=false;
+var regApiUrl='https://api-stage.idgcommunications.net/api/v1/';
+var apiKey="HLyMXLISSW7HAYGgbx2Vb1Gf1OLcGmMG5BcwZ4Vb";
+var tokenPrefix='www';
+var tokenSuffix='.com/insider/token?';
+var brandDomain=".infoworld.com";
+var insiderContentType="article";
+var notEmptyArticle=false;
+var notEmptyMediaResource=false;
+var isInsiderPremium=false;
+var isResourceInsiderPremium=false;
+var assetId="697422d1-7acb-40f6-be13-0e67329bc9ec";
+var placementId="2d44d74a-e883-4d18-ada8-b2f0e61a1d90";
+
+
+	regApiUrl="https://lqxgcyk808.execute-api.us-east-1.amazonaws.com/prod/api/v1/";
+
+
+
+	regDebugLog=false;
+
+
+
+	tokenPrefix="http://www";
+
+
+
+	tokenSuffix="/insider/token";
+
+
+
+
+
+	notEmptyArticle=true;
+
+
+	
+
+
+
+ 
+
+</script>
+
+
+<script src="/www/js/utils/alc_hashes.js"></script>
+<script src="/www/js/insider/insider_reg_api.js?v=20190415112431"></script>
+<script src="/www/js/insider/jquery.maskedinput-1.4.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	if(typeof(IDG.insiderReg.readCookie('nsdr')) !== 'undefined'){
+		$('#welcome-message').show();			
+		IDG.insiderReg.personalize();
+	}else{
+		$('.signin-register').show();	
+	}
+});
+
+</script>
+
+
+	
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+<!-- Begin Eloqua Tracking -->
+<script type="text/javascript" src="/www/js/analytics/eloqua/elqCfg.js"></script>
+<script type="text/javascript" src="/www/js/analytics/eloqua/elqImg.js"></script>
+<script type="text/javascript" src="/www/js/analytics/eloqua/elqFCS.js"></script>
+<script type="text/javascript" src="/www/js/analytics/eloqua/elqScr.js"></script>
+<script type="text/javascript" src="/www/js/analytics/eloqua/elqIDG.js"></script>
+
+
+
+	
+		
+			
+			
+			
+		
+		
+			
+			
+		
+	
+	
+
+	
+	
+
+<script type="text/javascript">
+	IDG = window.IDG || {};
+	IDG.PageInfo = IDG.PageInfo || {};
+	IDG.PageInfo = function() {
+		return {
+			eloqua_type: "blogpost", 
+			eloqua_topic: "opensource"
+		};
+	}();
+	var elqCustomerGUID = "";
+	if (this.GetElqCustomerGUID && typeof GetElqCustomerGUID === "function") {
+	        elqCustomerGUID = GetElqCustomerGUID();
+	}
+	IDG.Eloqua.invoke_flash();
+</script>
+<!-- End Eloqua Tracking -->
+	
+
+
+
+
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+	<script src="/www/js/ads/ads.js"></script>
+	
+	<script>var oneRegPlacementID = "";</script>
+	
+	
+	
+	
+	
+		
+			
+				
+			
+			
+			
+			
+			
+			
+		
+		
+		
+	
+	
+		
+	
+	
+	
+
+
+
+
+
+	
+		
+	
+		
+	
+	
+
+
+
+
+
+		
+		
+		
+		
+		  
+		
+
+	
+	
+	
+	
+	
+
+	
+	  	 
+	    
+	    
+	 
+	 
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+
+	<script>
+	var supMontMods = false;
+	</script>
+	
+	
+	
+	
+		
+		
+			
+				
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- blx4 #2806 blox4.simple  -->
+			
+
+		
+			
+				
+					
+					
+					
+						
+							
+					
+						
+					
+					
+					
+					
+					
+					
+						
+					
+				
+				
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+		
+		
+	
+
+
+	
+
+
+		
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+		
+			
+				
+				
+				
+					
+				
+			
+			
+			
+			
+		
+		
+		
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+		<script>
+		window.ntvConfig = window.ntvConfig || {} ;
+		window.ntvConfig.keyValues = window.ntvConfig.keyValues || {};
+		var segs = localStorage.getItem('_pnativo');
+		if (segs) {
+		  window.ntvConfig.keyValues.permutive = JSON.parse(segs).join(",");
+		}
+		</script>
+	
+	
+	
+	
+		<script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
+	
+
+	
+	
+	
+	<script type="text/javascript">
+		var prodNames = '';
+		var prodManufacturers = '';
+		var prodCategories = '';
+		var prodVendors = '';
+	</script>
+	
+	
+	
+	<script>
+	var insiderSignedIn = document.cookie.indexOf("nsdr") > -1; //check if Insider cookie exists
+	var idg_uuid = $.cookie('idg_uuid') || '';
+	
+	var dlJobFunction = '';
+	var dlJobPosition = '';
+	var dlIndustry = '';
+	
+	if (insiderSignedIn) {
+		var insiderToken = IDG.insiderReg.readCookie("nsdr");
+		var tokens = IDG.insiderReg.readCookieProperty(insiderToken);
+		if (!(tokens['jobPosition']===undefined)) {
+			dlJobPosition = tokens['jobPosition'];
+		}
+		if (!(tokens['jobFunction']===undefined)) {
+			dlJobFunction = tokens['jobFunction'];
+		}
+		if (!(tokens['industry']===undefined)) {
+			dlIndustry = tokens['industry'];
+		}
+	}
+	
+	insiderSignedIn = insiderSignedIn.toString(); //per Infotrust this needs to be a string, not a boolean
+	
+	var sincePublished = '1901 days';
+	sincePublished = sincePublished.split(" ")[0];
+	
+	//get edition from countryCode
+	var edition = '';
+	if (typeof countryCode !== 'undefined' && countryCode !== "") {//should be defined in locales-editions.jsp if brand has editions
+		edition = countryCode.toLowerCase();
+	}
+	
+	dataLayer=[{
+		'articleId': '2610314',
+		'articleDisplayId':'1',
+		'articleLocale': 'global',
+		'articleTitle': 'Why open source will rule the data center',
+		'articleType': 'Analysis',
+		'audience':'enterprise',
+		'author':'Michael Bushong',
+		'blogName':'New Tech Forum',
+		'brandpost': 'false',
+		'categoryIdList':'3248,3353,3394,3576,3747',
+		'categoryIdPrimary': '3248',
+		'contentStrategy': '',
+		'contentType':'analysis',
+		'datePublished':'2014-09-11',
+		'dateUpdated':'2014-09-11',
+		'daysSincePublished':"1901",
+		'daysSinceUpdated':'1901',
+		'displayType':'article',
+		'edition':edition,
+		'environment':'production',
+		'ga_enabled':'true',
+		'gaTrackingId':'UA-6647659-1',
+		'geolocEnabled':'true',
+		'goldenTaxonomyIdPrimary': '993',
+		'goldenTaxonomyIdList': '235,527,561,442',
+		'industry': dlIndustry,
+		'insiderSignedIn':insiderSignedIn,
+		'isBlog':'true',
+		'isInsiderContent':'false',
+		'isICN': 'false',
+		'jobFunction': dlJobFunction,
+		'jobPosition': dlJobPosition,
+		'oneRegPlacementID':oneRegPlacementID,
+		'pageNumber':'1',
+		'platform':'Web',
+		'podcastSponsored': 'false',
+		'primaryCategory': 'open source',
+		'ancestorGoldenCategories': '',
+		'primaryCategoryList': 'linux,data centers,it strategy,sdn',
+		'primaryAncestorCategoryList': 'open source,operating systems',
+		'property': 'infoworld',
+		'propertyCountry':'US',
+		'purchaseIntent':'',
+		'skimlinksId':'111346X1569476',
+		'source':'infoworld',
+		'sponsorName':'',
+		'suppressMonetization': supMontMods.toString(),
+		'tags': '',
+		'userId':idg_uuid,
+		'videoAutoplay':'false',
+		'articleHasVideo':'false',
+		'de_normalized_company_name':$.cookie('de_normalized_company_name'),
+		'ip_normalized_company_name':$.cookie('ip_normalized_company_name'),
+		'prodNames':prodNames.slice('|', -1),
+		'prodManufacturers':prodManufacturers.slice('|', -1),
+		'prodCategories':prodCategories.slice('|', -1),
+		'prodVendors':prodVendors.slice('|', -1)	
+	}];
+	</script>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+<script type="text/javascript">
+	var _sf_async_config={};
+
+	_sf_async_config.uid = 29363;
+
+	_sf_async_config.path = "/article/2610314/why-open-source-will-rule-the-data-center.html";
+	_sf_async_config.title = "Why open source will rule the data center | InfoWorld";
+	_sf_async_config.domain = "infoworld.com";
+	if(window.location.href.indexOf("video")&&true) {
+		_sf_async_config.playerdomain= _sf_async_config.domain.replace("www.","");
+	}
+	
+	_sf_async_config.useCanonical = true;
+	
+		
+			
+			_sf_async_config.sections = "open-source-tools";
+			_sf_async_config.authors="Michael Bushong";
+			
+		
+	
+</script>
+
+
+
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+<script>
+	var dataLayer = window.dataLayer = window.dataLayer || [];
+	var adBlockStatus = 'false';
+	
+	function AdBlockEnabled() {
+		var ad = document.createElement('ins');
+		ad.className = 'AdSense';
+		ad.style.display = 'block';
+		ad.style.position = 'absolute';
+		ad.style.top = '-1px';
+		ad.style.height = '1px';
+
+		if (document.body != null) {
+			document.body.appendChild(ad);
+			var isAdBlockEnabled = !ad.clientHeight;
+			document.body.removeChild(ad);
+		}
+
+		return isAdBlockEnabled; 
+	}
+	// AdBlockEnabled() was successful document.body not null
+	if (AdBlockEnabled() != undefined) {
+		adBlockStatus = AdBlockEnabled().toString();
+	}
+	// not successful - look for ads.js
+	if (document.body == null) {
+		if (window.canRunAds === undefined) {
+			adBlockStatus = 'true';
+		} else {
+			adBlockStatus = 'false';
+		}
+	}
+	
+	dataLayer.push({
+		'adBlockStatus': adBlockStatus
+	});
+</script>
+
+
+
+
+
+	<!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?GTM-WR6LD2P"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-WR6LD2P');</script>
+	<!-- End Google Tag Manager -->
+
+	
+	
+	
+	
+
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+	
+	
+	
+		<script async src="//js-sec.indexww.com/ht/p/183980-247839449380635.js"></script>
+	
+	
+	
+	
+		<script>
+			var numberFromDataLayer = function(property) {
+			  if (window.dataLayer && dataLayer[0] && typeof dataLayer[0][property] == "number") {
+			    return dataLayer[0][property];
+			  }
+			  return null;
+			};
+			
+			var stringFromDataLayer = function(property) {
+			  if (window.dataLayer && dataLayer[0] && typeof dataLayer[0][property] == "string") {
+			    return dataLayer[0][property];
+			  }
+			  return "";
+			};
+		</script>
+	
+
+	
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+<script>
+// IDGMPM-16419 - updated in IDGMPM-16933
+	!function(n,e,o,r,i){if(!e){e=e||{},window.permutive=e,e.q=[],e.config=i||{},e.config.projectId=o,e.config.apiKey=r,e.config.environment=e.config.environment||"production";for(var t=["addon","identify","track","trigger","query","segment","segments","ready","on","once","user","consent"],c=0;c<t.length;c++){var f=t[c];e[f]=function(n){return function(){var o=Array.prototype.slice.call(arguments,0);e.q.push({functionName:n,arguments:o})}}(f)}}}(document,window.permutive,"f5b3be27-f789-4ef1-8867-37c67da5b361","84c7e805-5ce9-41f4-b988-3529488bab1c",{});
+	  permutive.addon('web', {
+	    page: {
+	      type: stringFromDataLayer('displayType'),
+	      language: 'en',
+	      tags: stringFromDataLayer('tags').split(","),
+	      audience: stringFromDataLayer('audience'),
+	      description: 'According to Michael Bushong of networking startup Plexxi, three commonly occurring conditions ensure that open source software will steadily widen its data center footprint',
+	      
+	      article: {
+	        authors: stringFromDataLayer('author').split(","),
+	        description: 'According to Michael Bushong of networking startup Plexxi, three commonly occurring conditions ensure that open source software will steadily widen its data center footprint',
+	        id: stringFromDataLayer('articleId'),
+	        isInsiderContent: (stringFromDataLayer('isInsiderContent') == "true"),
+	        modifiedAt: "2014-09-11T15:10:16Z",
+	        publishedAt: "2014-09-11T15:10:16Z",
+	        source: stringFromDataLayer('source'),
+	        title: stringFromDataLayer('articleTitle'),
+	        type: stringFromDataLayer('articleType'),
+	        purchaseIntent: stringFromDataLayer('purchaseIntent')
+	      },
+	      
+	      ads: {
+	        adblocker: (adBlockStatus == "true"), //detected further up the page
+	        enabled: true
+	      },
+	      gTax: {
+	        primaryIds: [993,],
+	        secondaryIds: [235,527,561,442,993,225]
+	      },
+	      tax: {
+	    	  primaryCategories: stringFromDataLayer('ancestorGoldenCategories').length > 0 ? stringFromDataLayer('ancestorGoldenCategories').split(",").concat(stringFromDataLayer('primaryCategory')) : [stringFromDataLayer('primaryCategory')] ,
+	          secondaryCategories: stringFromDataLayer('primaryAncestorCategoryList').length > 0 ? stringFromDataLayer('primaryCategoryList').split(",").concat(stringFromDataLayer('primaryAncestorCategoryList').split(",")) : stringFromDataLayer('primaryCategoryList').split(",")
+	      }
+	    }
+	  });
+
+	  dlJobPosition = dlJobPosition || null;
+	  dlIndustry = dlIndustry || null;
+
+	  if (dlJobPosition !== '' || dlIndustry !== '' || stringFromDataLayer('userId') !== '') {
+		  window.permutive.track('User', {
+			  companySize: null,
+			  country: null,
+			  id: (stringFromDataLayer('userId') !== "" ? stringFromDataLayer('userId') : null),
+			  jobIndustry: (dlIndustry !== "" ? dlIndustry : null),
+			  jobPosition: (dlJobPosition !== "" ? dlJobPosition : null),
+			  loggedIn: (stringFromDataLayer('insiderSignedIn') == 'true')
+			})
+	  }
+	
+	  //product js vars defined in document-head	  
+	  if (prodNames !== '' || prodManufacturers !== '' || prodCategories !== '' || prodVendors !== '') {
+		  window.permutive.track('Product', {
+			  names: stringFromDataLayer('prodNames').split("|"),
+			  categories: stringFromDataLayer('prodCategories').split("|"),
+			  manufacturers: stringFromDataLayer('prodManufacturers').split("|"),
+			  vendors: stringFromDataLayer('prodVendors').split("|")
+		});
+
+	  }
+		 
+
+</script>
+
+<script>
+	$.ajax({
+		url: "https://cdn.permutive.com/f5b3be27-f789-4ef1-8867-37c67da5b361-web.js",
+	  	dataType: "script",
+	  	cache: true, // default is false
+	  	async: true // default is true
+	});
+</script>
+	
+	
+	
+	
+	
+	
+	
+</head>
+
+
+
+	<body id="article2610314" class="article blog1209 infoworld">
+		
+			
+			
+					
+					
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+			
+			
+				<!-- Begin welcome ad overlay - gpt-overlay position  -->
+				
+					<div id="superadunit" class="hidden">
+						<div class="ad">
+							<div class="ad-header">
+								<div class="brand-logo"></div>
+								<a href="javascript:unhide('superadunit');" id="superstitial-text">Close Ad</a>
+							</div>
+							<div id="gpt-overlay" class=" ad-container">
+								<script type="text/javascript">
+								consent.ads.queue.push(function(){
+									
+										IDG.GPT.addDisplayedAd("gpt-overlay", "true");
+										IDG.GPT.displayGoogleTagSlot('gpt-overlay');
+									
+								});
+								</script>
+							</div>
+						</div>
+					</div>
+				
+				
+				<!--  End welcome ad overlay - gpt-overlay position -->
+				
+			
+			
+			
+			
+			
+		
+	
+ 	
+ 
+ 
+				
+			
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+		
+		
+		<!-- BEGIN PAGE HEADER -->
+		<header id="banner" >
+			
+			
+			
+			
+			
+			
+			
+		    
+		    
+		    
+		    	
+		    	<script>
+		    	if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+					$('.main-header').insertBefore($('#banner .ad'));
+		    	}
+				</script>
+				
+				
+				<div class="topics-wrap">
+				    <section class="topics">
+				        <nav id="scrollable">
+					        
+								
+									
+									
+										
+									
+								
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- blx4 #1064 blox4.raw_link_list  -->
+			
+
+		
+			
+				
+					
+					
+					
+						
+							
+					
+						
+					
+					
+					
+					
+					
+					
+						
+					
+				
+				
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+			
+		
+	
+	
+	
+	<ul>
+		
+		<li class="header">Trending<span class="colon">:</span></li>
+		
+		
+			
+				<li><a class="edition-link-url" href="/category/application-development/" >Software Development</a></li>
+			
+		
+			
+				<li><a class="edition-link-url" href="/category/cloud-computing/" >Cloud Computing</a></li>
+			
+		
+			
+				<li><a class="edition-link-url" href="/category/machine-learning/" >Machine Learning</a></li>
+			
+		
+			
+				<li><a class="edition-link-url" href="/category/analytics/" >Analytics</a></li>
+			
+		
+			
+				<li><a class="edition-link-url" href="/insider/" >Insider Exclusives</a></li>
+			
+		
+			
+				<li><a class="edition-link-url" href="/resources/" >Resources & White Papers</a></li>
+			
+		
+	</ul>
+
+	
+
+
+							
+						</nav>
+				        
+				        <div class="fading-gradient"></div>
+				        
+				        
+				           
+					        
+					        <nav class="tools">
+					        	<ul class="user">
+				                     
+				                     	<li class="search-icon"><a href="#search" id="search-btn"><i class="ss-icon">Search</i></a></li>
+				                     
+				                 </ul>
+				                 <ul class="social">
+									
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		<li><a href="https://twitter.com/infoworld" itemprop="sameAs" rel="nofollow" target="_blank" onclick="brandFollowTrack('Twitter')"><i class="ss-icon ss-social-circle ss-twitter"></i></a></li>
+	
+	
+	
+		<li><a href="https://www.linkedin.com/company/164364" itemprop="sameAs" rel="nofollow" target="_blank" onclick="brandFollowTrack('LinkedIn')"><i class="ss-icon ss-social-circle brand ss-linkedin"></i></a></li>
+	
+	
+	
+		<li><a href="https://www.facebook.com/InfoWorld" itemprop="sameAs" rel="nofollow" target="_blank" onclick="brandFollowTrack('Facebook')"><i class="ss-icon ss-social-circle brand ss-facebook"></i></a></li>				
+	
+	
+	
+	
+	
+	
+	
+		<li><a href="/index.rss" target="_blank"><i class="ss-icon ss-social-circle ss-rss"></i></a></li>
+	
+	
+	
+		<li><a href="/newsletters/signup.html"><i class="ss-icon ss-social-circle ss-mail"></i></a></li>
+	
+	
+	
+		<li class="more-social"><i class="ss-icon ss-ellipsis"></i></li>
+	
+
+				                 </ul>
+				             </nav>
+				             
+			             
+				    </section>
+			    </div>
+			    
+			    
+		        	 <div id="sticky-anchor"></div>
+		        
+			    <section id="sticky-head" class="main">
+			        <div class="wrapper">
+			            <div class="masthead">
+			                
+			                <button><i class="ss-icon ss-rows"></i></button>
+			                
+			                <a href="/"><span class="ir logo">infoworld</span></a>
+			            	<!--
+			            	<img class="print-only" src="/www.idge.ifw/images/infoworld-logo-print.png">
+			            	-->
+			            	
+			            	<img class="print-only" src="//idge.staticworld.net/ifw/infoworld-logo-print.png">
+			            	
+			            </div>
+			            <div id="reading-tools-wrapper">
+		
+			                
+			                <nav class="tools">
+			                    
+			                    <ul class="user">
+			                    	
+			                    	
+			                    	
+			                    	
+			                        
+			                    </ul>
+			                </nav>
+			            </div>
+			            
+			            
+			            	<div class="insider-signin">
+			            	
+			            		<span class="signin-register">
+			            			<a href="/learn-about-insider/"><span class="insider"></span></a> <a href="javascript://" onclick="IDG.insiderReg.registerLinkEvent('insider-reg-signin')" class="js-open-modal signin" data-modal-id="insider-popup">Sign In</a> <span class="divider">|</span> <a href="javascript://" onclick="IDG.insiderReg.registerLinkEvent('insider-reg-form-short')" class="js-open-modal register" data-modal-id="insider-popup">Register</a>
+			            		</span>
+			            	
+			            		<div id="welcome-message" class="insider-list">
+				                    <div id="insider-selector">
+				                        <div id="insider-welcome" class="label"></div>
+				                        
+				                        <div class="stories">
+				                        	
+				                        	<div class="personalization">Hi<span id="person-first-name"></span>! Here are the latest Insider stories.</div>
+				                        	
+				                        	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<ul>
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+							
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+<li><a  href="/article/3390196/oracles-and-ibms-hybrid-cloud-defense-may-not-hold.html">Oracle’s and IBM’s hybrid cloud defense may not hold</a></li>
+				
+				
+			
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+							
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+<li><a  href="/article/3234797/whats-new-in-googles-android-studio.html">What’s new in Google’s Android Studio 3.4</a></li>
+				
+				
+			
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+							
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+<li><a  href="/article/3389883/5-steps-to-smarter-data-visualization.html">5 steps to smarter data visualization</a></li>
+				
+				
+			
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+							
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+<li><a  href="/article/3389361/javascript-tutorial-higher-order-functions.html">JavaScript tutorial: Higher-order functions</a></li>
+				
+				
+			
+		
+	</ul>
+
+
+
+
+											
+											<div class="sign-out-link">
+												<a class="more-insider" href="/insider/">More Insider</a>
+												<a class="sign-out" href="javascript://" onclick="IDG.insiderReg.logout()">Sign Out</a>
+											</div>
+										</div>
+										
+				                    </div>
+				                </div>
+				         
+			            	</div>
+			            	<script>
+			            		$('.signin-register').hide();	
+			            		$('#welcome-message').hide();
+			            	</script>
+			            	
+			            
+			            
+			        </div>
+			    </section>
+			    <section class="tools-expand  ">
+			        
+			        
+			        
+			        
+			        	
+			        	
+			        		
+					        <form class="search" id="search-form" action="/search">
+					            <label for="search-box">Search for</label>
+								<input type="text" name="query" id="banner-search-term" value="" class="searchbox-input-class"/>
+					            <input type="submit" id="banner-search-submit" value="Go" />
+					            <input type="hidden" name="contentType" value="article,resource" />
+					            <div class="search-suggest">Suggestions for you</div>
+					        </form>
+					    
+					
+			        <div class="user">
+			            <form>
+			                <label for="login-email">Insider email</label> <input id="login-email" type="text" />
+			            </form>
+			        </div>
+			        
+			    </section>
+			    
+			    
+			    
+				
+				
+		    		<div id="sticky-anchor-nav"></div>
+		    	
+		    	
+			    <nav id="sticky-nav" class="main">
+			    	<ul class="topnav">
+						
+						
+							
+			        		
+			        		
+			        			
+			        				<li><a href="/category/analytics/" class="hasChildren">Analytics<span class="ss-icon ss-navigatedown"></span></a>
+			            		
+			            		
+			            	
+			            		
+			            		
+				            		<ul class="subnav">
+				                		<li><a href="/category/analytics/">All Analytics</a></li>
+				            			
+				            			
+				            				<li><a href="/category/big-data/">Big Data</a></li>
+				            			
+				            			
+				            				<li><a href="/category/business-intelligence/">Business Intelligence</a></li>
+				            			
+				            			
+				            				<li><a href="/category/data-science/">Data Science</a></li>
+				            			
+				            			
+				            				<li><a href="/category/hadoop/">Hadoop</a></li>
+				            			
+				            			
+				            				<li><a href="/category/spark/">Spark</a></li>
+				            			
+				            		</ul>
+				            	
+			        		</li>
+						
+						
+							
+			        		
+			        		
+			        			
+			        				<li><a href="/category/careers/">Careers</a>
+			            		
+			            		
+			            	
+			            		
+			            		
+			        		</li>
+						
+						
+							
+			        		
+			        		
+			        			
+			        				<li><a href="/category/cloud-computing/" class="hasChildren">Cloud Computing<span class="ss-icon ss-navigatedown"></span></a>
+			            		
+			            		
+			            	
+			            		
+			            		
+				            		<ul class="subnav">
+				                		<li><a href="/category/cloud-computing/">All Cloud Computing</a></li>
+				            			
+				            			
+				            				<li><a href="/category/cloud-management/">Cloud Management</a></li>
+				            			
+				            			
+				            				<li><a href="/category/iaas/">IaaS</a></li>
+				            			
+				            			
+				            				<li><a href="/category/paas/">PaaS</a></li>
+				            			
+				            			
+				            				<li><a href="/category/public-cloud/">Public Cloud</a></li>
+				            			
+				            			
+				            				<li><a href="/category/software-as-a-service/">SaaS</a></li>
+				            			
+				            			
+				            				<li><a href="/category/serverless-computing/">Serverless Computing</a></li>
+				            			
+				            		</ul>
+				            	
+			        		</li>
+						
+						
+							
+			        		
+			        		
+			        			
+			        				<li><a href="/category/containers/" class="hasChildren">Containers<span class="ss-icon ss-navigatedown"></span></a>
+			            		
+			            		
+			            	
+			            		
+			            		
+				            		<ul class="subnav">
+				                		<li><a href="/category/containers/">All Containers</a></li>
+				            			
+				            			
+				            				<li><a href="/category/docker/">Docker</a></li>
+				            			
+				            			
+				            				<li><a href="/category/kubernetes/">Kubernetes</a></li>
+				            			
+				            		</ul>
+				            	
+			        		</li>
+						
+						
+							
+			        		
+			        		
+			        			
+			        				<li><a href="/category/data-management/" class="hasChildren">Data Management<span class="ss-icon ss-navigatedown"></span></a>
+			            		
+			            		
+			            	
+			            		
+			            		
+				            		<ul class="subnav">
+				                		<li><a href="/category/data-management/">All Data Management</a></li>
+				            			
+				            			
+				            				<li><a href="/category/database/">Databases</a></li>
+				            			
+				            			
+				            				<li><a href="/category/nosql/">NoSQL</a></li>
+				            			
+				            			
+				            				<li><a href="/category/sql/">SQL</a></li>
+				            			
+				            		</ul>
+				            	
+			        		</li>
+						
+						
+							
+			        		
+			        		
+			        			
+			        				<li><a href="/category/machine-learning/" class="hasChildren">Machine Learning<span class="ss-icon ss-navigatedown"></span></a>
+			            		
+			            		
+			            	
+			            		
+			            		
+				            		<ul class="subnav">
+				                		<li><a href="/category/machine-learning/">All Machine Learning</a></li>
+				            			
+				            			
+				            				<li><a href="/category/artificial-intelligence/">Artificial Intelligence</a></li>
+				            			
+				            			
+				            				<li><a href="/category/deep-learning/">Deep Learning</a></li>
+				            			
+				            		</ul>
+				            	
+			        		</li>
+						
+						
+							
+			        		
+			        		
+			        			
+			        				<li><a href="/category/open-source-tools/">Open Source</a>
+			            		
+			            		
+			            	
+			            		
+			            		
+			        		</li>
+						
+						
+							
+			        		
+			        		
+			        			
+			        				<li><a href="/category/application-development/" class="hasChildren">Software Development<span class="ss-icon ss-navigatedown"></span></a>
+			            		
+			            		
+			            	
+			            		
+			            		
+				            		<ul class="subnav">
+				                		<li><a href="/category/application-development/">All Software Development</a></li>
+				            			
+				            			
+				            				<li><a href="/category/agile-development/">Agile Development</a></li>
+				            			
+				            			
+				            				<li><a href="/category/ci-cd/">CI/CD</a></li>
+				            			
+				            			
+				            				<li><a href="/category/cloud-development/">Cloud Development</a></li>
+				            			
+				            			
+				            				<li><a href="/category/devops/">Devops</a></li>
+				            			
+				            			
+				            				<li><a href="/category/java/">Java</a></li>
+				            			
+				            			
+				            				<li><a href="/category/javascript/">JavaScript</a></li>
+				            			
+				            			
+				            				<li><a href="/category/microsoft-net/">Microsoft .Net</a></li>
+				            			
+				            			
+				            				<li><a href="/category/mobile-development/">Mobile Development</a></li>
+				            			
+				            			
+				            				<li><a href="/category/node-js/">Node.js</a></li>
+				            			
+				            			
+				            				<li><a href="/category/python/">Python</a></li>
+				            			
+				            			
+				            				<li><a href="/category/web-development/">Web Development</a></li>
+				            			
+				            		</ul>
+				            	
+			        		</li>
+						
+					</ul>
+			
+			    	<ul class="secondary">
+		           		
+		           		
+
+
+
+
+
+
+
+
+
+
+<li><a href="/blogs">Blogs</a></li>
+<li><a href="/reviews/">Reviews</a></li>
+<li><a href="/insider/">Insider articles</a></li>
+<li><a href="/newsletters/signup.html">Newsletters</a></li>
+<li><a href="/video/">Video</a></li>
+<li><a href="/resources/">Resources/White Papers</a></li>
+
+		           		
+			    	</ul>
+				</nav>
+				
+			
+			
+			
+			
+			
+
+			
+			
+				<script>
+		    	if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+					$('div.insider-signin').prependTo('section.topics nav.tools');
+		    	}
+				</script>
+			
+		    
+				<script>
+				$(document).ready(function(){
+					if($thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+						$("nav ul li a.hasChildren").attr("href", "#").addClass('notMobile');
+						$('nav#sticky-nav ul.secondary').addClass('topnav');
+					}
+					if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+						$("nav#sticky-nav > ul").switchClass("topnav", "primary");
+					}
+				});
+				</script>
+			
+			
+				
+		    	<script>
+		    	if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+					$('#sticky-anchor, section.main, section.topics, section.tools-expand, #sticky-anchor-nav, nav.main').insertBefore($('#banner .ad'));
+					$(document).ready(function(){
+						$('#banner section.tools-expand').addClass('top-margin');
+					});
+		    	}
+				</script>
+				
+			
+			
+			
+		</header>
+		
+		
+		
+		<script>
+		$(document).ready(function(){
+			$('body').addClass('insider-plus');
+			
+			var headerHeight = $('header#banner').height(); // height for desktop on load not fixed
+			$('header#banner nav#sticky-nav.main.no-stick').css("top", headerHeight);
+			
+			if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){	
+				var stickyHeaderHeight = $('section.topics').height() + $('#sticky-head.main').height();
+				stickyHeaderHeight = stickyHeaderHeight - 8;
+			}
+			
+			// Listen for orientation changes - mobile devices have a problem resizing fixed position elements on
+			// orientation change from portrait to landscape so scrolling to current position of header
+			var supportsOrientationChange = "onorientationchange" in window,
+		    orientationEvent = supportsOrientationChange ? "orientationchange" : "resize";
+			
+			if($thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+				window.addEventListener(orientationEvent, function() {
+					var top = $('section#sticky-head.main').offset().top;
+					if (top < 170) {
+						top = 0; // so we don't miss the top leaderboard or ticker on change
+					} else {
+						top = top - 50; //acknowledging "shorter" top on landscape than portrait
+					}
+					if (window.orientation == 90 || window.orientation == -90) {
+						window.scrollTo(0, top);
+					}
+				}, false);
+			}
+			
+			if($thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet) && $thm.deviceHeight() < 768 ) {
+				if($('html').hasClass('touch')) {
+					$('#insider-popup.modal-box .modal-body').addClass('short');
+				} else {
+					$('#insider-popup.modal-box .modal-body').addClass('short-desk');
+				}
+			}
+			
+			if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+				window.addEventListener(orientationEvent, function() {
+					var top = $('section#sticky-head.main').offset().top;
+					if (top < 50) {  // top is fixed on mobile so this is when user is at very top
+						top = 5; // scroll 5 pixels from 0 to resize fixed header from portrait
+					} else {
+						top = top - 40;
+					}
+					if (window.orientation == 90 || window.orientation == -90) {
+						window.scrollTo(0, top);
+					}
+				}, false);
+			}
+			
+			//nexus 7 is sized mobile in portrait and tablet in landscape
+			var ua = navigator.userAgent.toLowerCase();
+			var isAndroid = ua.indexOf("android") > -1;
+			window.addEventListener(orientationEvent, function() {
+			    if(isAndroid && (screen.width == 600 || screen.width == 960)) {
+			    	location.reload(true); // refreshing page for changes to header
+			    }
+			}, false);
+			
+			if ($thm.deviceWidthAtLeast($thm.deviceBreakpoints.desktop) && !$('html').hasClass('touch')){
+				$("ul.social li.more-social").mouseenter(function() {
+					$('ul.social > li').addClass('display-icon');
+				});
+				$("ul.social").mouseleave(function() {
+					$('ul.social > li').removeClass('display-icon');
+				});
+			};
+			
+			if($thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet) && $('html').hasClass('touch')){
+				$("ul.social li.more-social").click(function() {
+					$('ul.social > li').toggleClass('display-icon');
+				});
+			};
+			
+			$('.searchbox-input-class').each(function(){
+			    $(this).change(function(){
+			    	var qStr=$(this).val();
+			    	if($(this).val().indexOf('@')!=-1){
+			    		qStr=qStr.replace(/@/g,' ');
+			    		$(this).val(qStr);
+			    	}
+			    });
+			});
+			
+		});
+		
+		function sticky_relocate() {
+			var headerHeight = $('header#banner').height(); // height for desktop	
+			//$('header#banner nav#sticky-nav.main').css("top", headerHeight);
+			
+			var winHeight = $(window).height();
+			// desktop
+			if ( $thm.deviceWidthAtLeast($thm.deviceBreakpoints.wide ) ){
+				winHeight = winHeight - 40;
+				if (window.orientation == 90 || window.orientation == -90) {
+					winHeight = winHeight + 50; // landscape tablet 1024
+				}
+			}// tablet
+			else if ( $thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet) && !$thm.deviceWidthAtLeast($thm.deviceBreakpoints.wide) ) {
+				winHeight = winHeight + 40;
+			} else { // mobile
+				winHeight = winHeight + 10;
+			}
+			
+			$('#banner nav#sticky-nav.main').css("height", winHeight); // flyout nav height
+		
+			// tablet and desktop
+			if($thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+			    var window_top = $(window).scrollTop();
+			    var div_top = $('#sticky-anchor').offset().top;
+			    if (window_top > div_top) {
+			        $('#sticky-head').addClass('stick');
+			        $('#page-wrapper').addClass('top-pad');
+			        $('#banner .ad').addClass('top-margin');
+			    } else {
+			        $('#sticky-head').removeClass('stick');
+			        $('#page-wrapper').removeClass('top-pad');
+			        $('#banner .ad').removeClass('top-margin');
+			    }
+			}
+			// mobile
+			if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+				$('section.topics').addClass('stick-topics');
+				$('#sticky-head').addClass('stick-head');
+				$('#page-wrapper').addClass('top-pad');
+				$('#banner .ad').addClass('top-margin');
+				$('#banner section.tools-expand').addClass('search');
+				  
+				var window_top = $(window).scrollTop();
+				var div_top = $('#sticky-anchor').offset().top + 30;
+			    if (window_top > div_top) {
+			    	$('#sticky-head').addClass('stick');
+			    	$('.topics.stick-topics, #search-form').addClass('remove');
+			    	$('li.search-icon').fadeOut("fast");
+			    } else {
+			    	$('#sticky-head').removeClass('stick');
+			    	$('.topics.stick-topics, #search-form').removeClass('remove');
+			    	$('li.search-icon').fadeIn("fast");
+			    }
+			}// end mobile
+		    
+			// tablet and desktop flyout nav
+			if($thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+			    if ($('#sticky-head').hasClass('stick')) {
+			    	var stickyHeaderHeight = $('section.main').height(); // height of the fixed header for tablet and desktop
+			    	stickyHeaderHeight = 52; // setting fixed height - same across all sites
+					$('header#banner nav#sticky-nav.main').css("top", stickyHeaderHeight);
+			        $('#sticky-nav').addClass('stick');
+			        $('#sticky-nav').removeClass('no-stick');
+			    } else {
+			    	stickyHeaderHeight = $('header#banner').height();
+			    	$('header#banner nav#sticky-nav.main').css("top", stickyHeaderHeight);
+			        $('#sticky-nav').removeClass('stick');
+			        $('#sticky-nav').addClass('no-stick');
+			    }
+			    
+			}// end tablet/desktop
+			
+			
+			// mobile flyout nav
+			if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+			    	
+		    	var stickyHeaderHeight = $('section.topics').height() + $('#sticky-head.main.stick-head').height(); // height of the fixed header for mobile
+		    	stickyHeaderHeight = stickyHeaderHeight - 8;  // 8 seems appropriate
+		    	$('header#banner nav#sticky-nav.main').css("top", stickyHeaderHeight);
+		        $('#sticky-nav').addClass('stick');
+		
+		        if ($('#sticky-head').hasClass('stick')) {
+		        	$('#sticky-head.stick').siblings('#sticky-nav').addClass('nav-stick');
+		        	$('#sticky-head').siblings('#sticky-nav').removeClass('no-stick');
+		        } else {
+		        	$('#sticky-head').siblings('#sticky-nav').removeClass('nav-stick');
+		        	$('#sticky-head').siblings('#sticky-nav').addClass('no-stick');
+		        }
+		
+			}// end mobile
+			
+		    
+		} // end sticky_relocate
+		
+		
+		
+		
+		$(function () {
+		    $(window).scroll(sticky_relocate);
+		    sticky_relocate();
+		});
+		</script>
+		
+		
+
+	<div id="insider-popup" class="modal-box ">
+	
+		<div class="insider-modal-wrapper">
+	  
+			<div class="modal-header-title">
+				<div class="modal-banner-insider"><span class="insider"></span></div>
+		    	<div class="modal-close close">×</div>
+		  	</div>
+		  	
+		  	<div class="modal-body">
+		  		
+		  			
+						<script>
+$(document).ready(function(){
+	$('a[data-link]').click(function() {
+		
+		  //get this link's dataLink value
+		  var dataLink = $(this).attr('data-link');
+
+		  //select the div with the same value
+		  var toKeep = 'div[data-link="'+dataLink+'"]';
+	
+		  //select data-link divs that are not the above div
+		  $('div[data-link]').not(toKeep).hide();
+		  
+		  if($(this).hasClass('link-transition')){
+			  $(toKeep).fadeIn(800);
+		  } else {
+			  $(toKeep).show();
+		  }
+	
+		  //prevent location change
+		  return false;
+	});
+	
+
+});
+</script>
+
+					
+					
+				
+		  	</div>
+		  	
+		  	<div class="modal-footer">
+		    	<div class="modal-close close-btn">Close</div>
+		  	</div>
+		</div>
+	  	
+	</div>
+
+	<script>
+		$(document).ready(function(){
+
+			var appendthis =  ("<div class='modal-overlay modal-close'></div>");
+			if($thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+				$('.modal-box').css({
+					//top: ($(window).height() - $(".modal-box").outerHeight()) / 2,
+					top: 10,
+					left: 0
+				});
+			}
+			
+			
+			if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+				$('.modal-box').height($(document).height());
+				$('.modal-box').css('top','0');
+			}
+			
+			var userAg = navigator.userAgent;
+
+			$('a[data-modal-id]').click(function(e) {
+				e.preventDefault();
+				$('body').append(appendthis);
+				$('.modal-overlay').fadeTo(500, 0.9);
+				$('.modal-overlay').height($(document).height());
+				var modalBox = $(this).attr('data-modal-id');
+				
+				if ($(".modal-box").hasClass('triggered') || (userAg.indexOf("Firefox")!=-1)) {
+					$('#'+modalBox).fadeIn($(this).data()); // triggered by something other than onclick of link such as scroll to point in window
+				} else {
+					// IDGMPM-16177
+					//if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+						$('#'+modalBox).toggle('slide', {direction: 'up'}, 800);
+					//} else {
+				   // 	$('#'+modalBox).toggle('slide', {direction: 'left'}, 600);
+					//}
+				}
+
+				if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+					$("html, body").animate({
+			            scrollTop: 0
+			        }, 700);
+			        
+			        
+			        $('a.btn.continue-on').click(function() {
+			        	$('html, body').animate({
+			        		scrollTop: 0
+			        	}, 500);
+			        });
+			        
+			        return false;
+			        
+				}
+				if (navigator.userAgent.match(/(iPad)/)) {
+					$("html, body").animate({
+			            scrollTop: 0
+			        }, 500);
+				}
+			});
+		  
+		  
+			$(".modal-close, .modal-overlay").click(function() {
+				$('.select2-drop').css('display','none');
+				$(".modal-overlay").fadeOut(500, function() {
+					$(".modal-overlay").remove();
+				});
+				if ($(".modal-box").hasClass('triggered') || (userAg.indexOf("Firefox")!=-1)) {
+					$(".modal-box").fadeOut(500);
+				} else {
+					// IDGMPM-16177
+					//if(!$thm.deviceWidthAtLeast($thm.deviceBreakpoints.tablet)){
+						$('.modal-box').toggle('slide', {direction: 'up'}, 800);
+					//} else {
+					//	$('.modal-box').toggle('slide', {direction: 'left'}, 600);
+					//}
+				}
+			});
+		
+		});
+	</script>
+
+		
+		
+		
+		
+		
+		<!-- END PAGE HEADER -->
+
+
+
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+<div id="page-wrapper" class="page-wrapper">
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="skinAdTarget"></div>
+
+
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+	
+	
+ 	
+
+
+
+
+
+
+
+	
+	<section role="main">
+
+		<article itemscope itemtype="http://schema.org/BlogPosting"  class="blog" >
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		
+		
+			<div class="ticker-ad ad">
+				
+					
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+			
+			
+			
+			
+			
+				<div id="ticker" class=" ad-container">					
+				</div>				
+				<script type="text/javascript">
+				consent.ads.queue.push(function(){
+				
+					IDG.GPT.addDisplayedAd("ticker", "true");
+					$('#ticker').responsiveAd({screenSize:'971 1115', scriptTags: []});
+                    IDG.GPT.log("Creating ad: ticker - [971 1115]");
+				
+				});
+				</script>
+			
+		
+	
+ 	
+ 
+ 
+			</div>
+		
+	
+	
+
+
+
+<!-- Events Header -->
+
+ 
+ 
+	
+		
+		
+		
+		
+		
+					    			
+		
+	
+	
+	
+	
+	
+
+ 
+ 
+ 
+ 
+  
+  
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+<!-- //end Events Header -->
+
+
+	
+	
+	
+	
+	
+	
+		
+	
+
+
+
+	
+		
+	
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+		<script>
+		$(document).ready(function() {
+			var fullDate = "Feb 5, 2014";
+			document.querySelector(".format-date").textContent = fullDate;
+		});
+		</script>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class='cat'>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<nav class="breadcrumbs horiz">
+		<ul itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+			<li><a class="edition-link-url" href="/" itemprop="url"><span itemprop="title">Home</span></a></li>
+			
+				
+				
+					<li><a class="edition-link-url primary-cat-url" href="/category/open-source-tools/" itemprop="url"><span class="primary-cat-name" itemprop="title">Open Source</span></a></li>
+				
+				
+			
+		</ul>
+	</nav>
+	
+	
+	
+		<div class="blog-byline vcard author " itemscope itemtype="http://schema.org/Person" itemprop="author">
+			<div class="brand ">
+				
+				
+					
+						
+							
+							
+							
+							
+						
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<a href="/blog/new-tech-forum/">
+		<img  class="originalImage  imgId100422602 " src="https://images.techhive.com/images/article/2014/09/newtechforum_icon-100422602-orig.jpg" width="34" width="34" alt="New Tech Forum" itemprop="image" />
+	</a>
+
+					
+					
+					
+				
+				
+				<div class="blog-branding-text">
+					
+					
+					
+					
+					
+					<div class="blog-title"><a href="/blog/new-tech-forum/">New Tech Forum</a></div>
+					
+					
+					
+						
+							<p class="name" itemscope itemtype="http://schema.org/Person" itemprop="author">
+								
+								
+								By <span class="fn" itemprop="name">Michael Bushong</span>, 
+								
+								<span class="cn-container">
+									
+								</span>
+								
+							  	
+								
+									
+								
+
+
+
+
+
+
+
+
+
+
+
+
+<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><span class="publisher" itemprop="name">InfoWorld</span><meta itemprop="logo" content="https://idge.staticworld.net/ifw/IFW_logo_social_300x300.png"/></span> 
+								
+								<span class="divider">|</span>
+								
+								<span class="pub-date"  itemprop="datePublished" 
+								    content="2014-02-05T06:00-0800"><span class="format-date"></span>
+									
+								</span>
+							</p>
+							
+							
+																				
+										
+					
+				</div>
+			</div>
+			
+				<div class="about">
+					<div class="about-title">About <span class="divider">|</span> <a href="/blog/new-tech-forum/index.rss"><i class="ss-icon ss-social ss-rss"></i></a></div>
+					<p>Emerging tech dissected by technologists</p>
+				</div>
+			
+		</div>
+	
+	
+	
+	
+	
+		
+		
+			<div class="category"></div>
+		
+	
+	
+
+	<h1 itemprop="headline">Why open source will rule the data center</h1>
+	
+	
+	
+	
+		<section class="deck viewability">
+			<h3 itemprop="description">According to Michael Bushong of networking startup Plexxi, three commonly occurring conditions ensure that open source software will steadily widen its data center footprint</h3>
+		</section>
+	
+	
+	
+	
+			<div class="cat-social">
+				
+					
+				
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+				
+
+	
+	
+		
+	
+
+
+
+
+
+	
+
+
+<div id="sharer" class="cat sidecar show blog">
+<ul id="share-tool" class="expand">
+
+
+	<li class="sosh">
+		<a class="twit-hand" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.infoworld.com%2Farticle%2F2610314%2Fwhy-open-source-will-rule-the-data-center.html&via=infoworld&text=Why+open+source+will+rule+the+data+center" target="_blank">
+			<img class="sidecar-icon" src="//idge.staticworld.net/images/twitter.svg" />
+		</a>
+	</li>
+	<li class="sosh">
+		<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.infoworld.com%2Farticle%2F2610314%2Fwhy-open-source-will-rule-the-data-center.html" target="_blank">
+			<img class="sidecar-icon" src="//idge.staticworld.net/images/facebook.svg" />
+		</a>
+	</li>
+	<li class="sosh">
+		<a href="http://www.linkedin.com/shareArticle?url=https%3A%2F%2Fwww.infoworld.com%2Farticle%2F2610314%2Fwhy-open-source-will-rule-the-data-center.html&title=Why+open+source+will+rule+the+data+center" target="_blank">
+			<img class="sidecar-icon" src="//idge.staticworld.net/images/linkedin.svg" />
+		</a>
+	</li>
+	<li class="sosh hide">
+		<a href="http://reddit.com/submit?url=https%3A%2F%2Fwww.infoworld.com%2Farticle%2F2610314%2Fwhy-open-source-will-rule-the-data-center.html&title=Why+open+source+will+rule+the+data+center" target="_blank">
+			<img class="sidecar-icon" src="//idge.staticworld.net/images/reddit.svg" />
+		</a>
+	</li>
+	<li class="sosh hide">
+		<a href="#email" id="email-icon">
+			<img class="sidecar-icon" src="//idge.staticworld.net/images/mail.svg" />
+		</a>
+	</li>
+	<li class="sosh hide print">
+		<a href="javascript:window.print();">
+			<img class="sidecar-icon" src="//idge.staticworld.net/images/print.svg" />
+		</a>
+	</li>
+	<li class="more">
+		<div class="more-icon" onclick="document.getElementById('share-tool').className = 'expand';"></div>
+	</li>
+
+
+
+
+</ul>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	if (twitterHandle != "") {
+		$("a[href*=via]").attr("href", function(_, href) {
+			  return href.replace(/via=infoworld/, "via="+twitterHandle);
+		});
+	}
+});
+</script>
+
+<script type="text/javascript">
+var isValidEmailAddress = isValidEmailAddress || function(emailAddress) {
+    var pattern = new RegExp(/^[+a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/i);
+    return pattern.test(emailAddress);
+};
+function encodeQueryData(params) {
+	var ret = [];
+	for (var paramKey in params) {
+		ret.push(encodeURIComponent(paramKey) + "=" + encodeURIComponent(params[paramKey]));
+	}
+	return ret.join("&");
+}	
+function bindEmailModal() {
+	$('#emailModal').on("click",".close-btn",function(event) {
+		event.preventDefault();
+        $('#emailModal').hide();
+        $("#emailModal .eml-friend").show();
+        $(".eml-friend-success").hide();
+        $(".eml-friend-error").hide();
+		$('#emailModal').fadeOut(200);
+		$('#email-to').val('');
+		$('#email-from').val('');
+		$('#name').val('');
+		$('#personalization').val('');
+		$('#eml-from-address-message').html("");
+		$('#eml-to-address-message').html("");
+		$('#eml-friend-captcha-message').html("");
+	});
+
+	$('#emailModal').on("submit","form",function(event) {
+		event.preventDefault();
+		var $form = $(this);
+		var action = $form.attr('action');
+		var formData = $form.serialize();
+		var emailFrom = $('#email-from').val();
+		var emailTo = $('#email-to').val();
+		var uresponse=$('#g-recaptcha-response').val();
+		$('#eml-from-address-message').html("");
+		$('#eml-to-address-message').html("");
+		$('#eml-friend-captcha-message').html("");
+		if (isValidEmailAddress(emailFrom) && isValidEmailAddress(emailTo) && uresponse !="") {
+			// eloqua
+			
+			var eloquaParam = {
+				AssetCountforCurrentCampaign : "1",
+				AssetName : "",
+				AssetTopic : "",
+				AssetType : "",
+				BuyingCycle : "",
+				C_Address1 : "",
+				C_Address2 : "",
+				C_BusPhone : "",
+				C_City : "",
+				C_Company_Size1 : "",
+				C_Country : "",
+				C_EmailAddress : "",
+				C_FirstName : "",
+				C_Industry1 : "",
+				C_Job_Role1 : "",
+				C_LastName : "",
+				C_State_Prov : "",
+				C_Zip_Postal : "",
+				ClientName : "",
+				ProgramName : "",
+				brand : "",
+				elqFormName : "CentralRegistrationMasterForm",
+				formId : "3062313",
+				elqSiteId : 1856,
+				elqCustomerGUID : elqCustomerGUID,
+				elqCookieWrite : 0,
+				friend_email : emailFrom,
+				friend_article_title : "Why open source will rule the data center",
+				friend_taxo : "Open Source",
+				friend_source : "InfoWorld",
+				friend_article_url : "https://www.infoworld.com/article/2610314/why-open-source-will-rule-the-data-center.html", 
+				device_platform : navigator.userAgent
+			};
+			$.ajax("https://secure.p01.eloqua.com/e/f2.aspx", {
+				type: 'GET',
+				data: eloquaParam,
+				success: function(data, textStatus, xhr) {
+				},
+				error: function(xhr, textStatus, errorThrown) {
+				}
+			});
+			// eloqua
+			var eloquaParamMini = {
+				elqCustomerGUID : elqCustomerGUID,
+				friend_taxo : "Open Source",
+				friend_source : "InfoWorld",
+				device_platform : navigator.userAgent
+			};
+			formData += "&" +encodeQueryData(eloquaParamMini);
+			
+			// email
+			$.ajax(action, {
+				type: 'POST',
+				data: formData,
+				success: function(data, textStatus, xhr) {
+					$("#emailModal .eml-friend").hide();
+					$(".eml-friend-success").fadeIn(800);	
+				},
+				error: function(xhr, textStatus, errorThrown) {
+					$("#emailModal .eml-friend").hide();
+					$(".eml-friend-error").fadeIn(800);						
+				}
+			});
+		}
+		else {	
+			if(uresponse==""){
+				$('#eml-friend-captcha-message').html("Please verify you're not a robot!");	
+			}
+			if(!isValidEmailAddress(emailTo)){
+			  $('#eml-to-address-message').html("Please enter a valid email address.");		
+			}
+			if(!isValidEmailAddress(emailFrom)){
+			  $('#eml-from-address-message').html("Please enter a valid email address.");		
+			}
+		}
+	});
+} //bindEmailModal() end
+
+$(document).ready(function() {
+	$(document).on("click","#email-icon",function(event) {
+		event.preventDefault();
+		bindEmailModal();
+		$('#emailModal').fadeIn(800);
+	});
+});
+</script>
+<div class="modal eml-friend-wrapper" id="emailModal" style="display:none;">	
+	<form class="eml-friend" action="/eloquaemail/article?eloqua=true&id=2610314">
+		<input type="hidden" name="title" value="Why open source will rule the data center" />
+		<input type="hidden" name="url" value="https://www.infoworld.com/article/2610314/why-open-source-will-rule-the-data-center.html" />
+		<a href="#" class="close-btn"><i class="ss-icon ss-delete"></i></a>
+		<h3>Email a friend</h3>
+
+		<div class="input-row">
+			<div id="eml-to-address-message" class="error-msg"></div>
+			<h4 class="input-label">To</h4>
+			<input id="email-to" value="" placeholder="Email address (required)" type="email" name="recipients" tabindex="1">
+			<p class="addl-text">Use commas to separate multiple email addresses</p>
+		</div>
+		<hr />
+		<div class="input-row">
+			<div id="eml-from-address-message" class="error-msg"></div>
+			<h4 class="input-label">From</h4>
+			<input id="name" value="" placeholder="Name (optional)" type="text" name="name" tabindex="2">
+		</div>
+		<div class="input-row">
+			<input id="email-from" value="" placeholder="Email address (required)" type="email" name="sender" tabindex="3">
+		</div>
+		<div class="input-row">
+			<textarea name="message" placeholder="Check out this article I found on InfoWorld." id="personalization" tabindex="4"></textarea>
+		</div>
+		<hr />
+		<div class="input-row">
+			<div id="eml-friend-captcha-message" class="error-msg"></div>
+		
+		
+ 			
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+<div class="g-recaptcha" data-sitekey="6LczmkcUAAAAANEO7J277KwH6Kzp6BEQjPTWP4S4"></div>
+ 		</div>
+		<hr />
+		<div class="submit">
+			<input type="submit" value="Send" class="input-submit" tabindex="5">
+			<a href="/about/privacy.html" class="submit-privacy" target="_blank">Privacy Policy</a>
+		</div>
+	</form>
+
+	<div class="eml-ty eml-friend-success" style="display:none;">
+		<a href="#" class="close-btn"><i class="ss-icon ss-delete"></i></a>
+		<h3>Thank you</h3>
+		<p class="msg-sent">Your message has been sent.</p>
+	</div>
+	<div class="eml-friend-error" style="display:none;">
+		<a href="#" class="close-btn"><i class="ss-icon ss-delete"></i></a>
+		<h3>Sorry</h3>
+		<p class="msg-sent">There was an error emailing this page.</p>
+	</div>
+</div>
+
+			</div>
+	
+	
+	
+
+	
+		
+			
+		
+	
+	
+		
+	
+	
+		
+			<div class="ad viewability" id="viewabilityAdContainer">
+				<div id="viewabilityAdUnit">
+					
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+			
+			
+			
+			
+			
+				<div id="topleaderboard" class=" ad-container">					
+				</div>				
+				<script type="text/javascript">
+				consent.ads.queue.push(function(){
+				
+					IDG.GPT.addDisplayedAd("topleaderboard", "true");
+					$('#topleaderboard').responsiveAd({screenSize:'971 1115', scriptTags: []});
+                    IDG.GPT.log("Creating ad: topleaderboard - [971 1115]");
+				
+				});
+				</script>
+			
+		
+	
+ 	
+ 
+ 
+				</div>
+			</div>
+			
+		
+	
+	
+	
+	
+	
+</header>
+
+
+
+
+	
+	
+	
+	
+		<div class="lede-container">
+			
+			
+			
+				
+				
+				
+			
+		</div>
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+		
+	
+
+
+
+<section class="epo cat-narrow" id="drr-top-ad">
+	
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+<!-- Related -->
+
+
+ 
+	
+	<div class="zip-recruiter-wrapper">
+		<div class="sector apart">
+
+			<div class="hed"> Current Job Listings</div>
+			
+			<!-- CIO -->
+			
+			
+			<!-- CSO -->
+			
+			
+			<!-- Computerworld -->
+			
+			
+			<!-- InfoWorld -->
+			
+				<div id="zipsearch_container"></div>
+				<script type="text/javascript" src="https://www.ziprecruiter.com/jobs-widget/mini/v1/6xritg3cunp8myfe3ebbefsfqyrc3juu"></script>
+				<script>
+					zipsearch.init({
+					"results_per_page" : 8,
+					"container" : "zipsearch_container",
+					search: 'Database Engineer', 
+					search: 'Analytics', 
+					search: 'Machine Learning', 
+					search: 'Cloud Engineer', 
+					search: 'Software Developer', 
+					search: 'Software Engineer', 
+					radius_miles: '50',
+					});
+				</script>
+			
+			
+			<!-- Network World -->
+			
+		</div>
+	</div>
+	
+
+	
+	
+	
+		
+		
+				
+   	
+   	
+   	
+   		
+   			
+   		
+
+
+
+
+
+
+
+
+
+
+
+<!-- Related -->
+
+
+
+
+
+
+
+
+
+
+   	
+
+
+				<div class="ad top-ad">
+	
+		
+		
+			
+				
+					
+					
+						
+					
+				
+				
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+			
+			
+			
+			
+			
+				<div id="topimu" class="adunit ad-container">					
+				</div>				
+				<script type="text/javascript">
+				consent.ads.queue.push(function(){
+				if($(window).width() >= 930) {
+					IDG.GPT.addDisplayedAd("topimu", "true");
+					$('#topimu').responsiveAd({screenSize:'971 1115', scriptTags: []});
+                    IDG.GPT.log("Creating ad: topimu - [971 1115]");
+				}
+				});
+				</script>
+			
+		
+	
+ 	
+ 
+ 
+		
+	
+</div>
+		
+	
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+
+
+
+		<section class="bodee">
+
+			
+				
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<style>
+	#drr-container figure.large.video {
+		border-bottom: 0 none;
+	}
+	figure#page-lede.thm-gallery.rr-gallery-vid #bcplayer-gallery #bcplayer-gallery_ad > div {
+		width: 300px !important;
+		height: 169px !important;
+		transition: all 0.5s ease;
+	}
+	figure#page-lede.thm-gallery #bcplayer-gallery #bcplayer-gallery_ad > div {
+		width: 100%;
+		height: 100%;
+		transition: all 0.5s ease;
+	}
+</style>
+<style>
+.jwplayer.jw-state-paused .jw-display {
+	display: table !important;
+	padding: 0;
+}
+.jwplayer .jw-display-icon-container {
+    float: none;
+    padding: 0;
+    margin: 0;
+}
+.jw-flag-small-player .jw-display {
+	padding-top: 0px;
+}
+.jwplayer .jw-display-icon-container .jw-icon-rewind {
+	visibility: hidden;
+}
+.jwplayer .jw-display-icon-container  .jw-icon-display .jw-svg-icon-play path,
+.jw-state-idle .jw-svg-icon-play path,
+.jwplayer .jw-display-icon-container  .jw-icon-display .jw-svg-icon-replay path,
+.jw-state-complete .jw-svg-icon-replay path {    
+    display: none;
+}
+.jwplayer .jw-display-icon-container  .jw-icon-display .jw-svg-icon-play,
+.jw-state-idle .jw-svg-icon-play,
+.jwplayer .jw-display-icon-container  .jw-icon-display .jw-svg-icon-replay,
+.jw-state-complete .jw-svg-icon-replay {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-image: url(//idge.staticworld.net/idgtv/btn-play-default.svg);
+    background-position: center center;
+    bottom: 0;
+    border-radius: 0;
+    box-shadow: none;
+    left: 0;
+    margin: auto;
+    right: 0;
+    top: 0;
+}
+.jwplayer .jw-display-icon-container .jw-icon,
+.jwplayer .jw-display-icon-container  .jw-icon-display .jw-svg-icon-play,
+.jw-state-idle .jw-svg-icon-play,
+.jwplayer .jw-display-icon-container  .jw-icon-display .jw-svg-icon-replay,
+.jw-state-complete .jw-svg-icon-replay {
+    height: 81px;
+    width: 78px;
+}
+.thm-gallery.rr-gallery-vid .jwplayer .jw-display-icon-container .jw-icon,
+.thm-gallery.rr-gallery-vid .jwplayer .jw-display-icon-container  .jw-icon-display .jw-svg-icon-play,
+.thm-gallery.rr-gallery-vid .jw-state-idle .jw-svg-icon-play,
+.thm-gallery.rr-gallery-vid .jwplayer .jw-display-icon-container  .jw-icon-display .jw-svg-icon-replay,
+.thm-gallery.rr-gallery-vid .jw-state-complete .jw-svg-icon-replay  {
+	height: 65px;
+    width: 62px;
+}
+</style>
+
+
+	
+
+
+
+
+
+
+
+	<div class="ad placement">
+		
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+			
+			
+				<!--  Begin gpt-skin/inread -->
+				<div id="inread" class=" ad-container">					
+				</div>
+				<script type="text/javascript">
+				consent.ads.queue.push(function(){
+					IDG.GPT.addDisplayedAd("inread", "true");
+					IDG.GPT.displayGoogleTagSlot('inread');
+				});
+				</script>
+				<!--  End gpt-skin/inread -->	
+			
+			
+			
+			
+		
+	
+ 	
+ 
+ 
+	</div>
+
+
+
+
+
+
+
+
+	
+	
+		
+		
+		<script>
+			var dataLayer = window.dataLayer = window.dataLayer || [];
+			dataLayer.push({
+				'event': 'loadTopCollectionModule'
+				});
+		</script>
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('.articleBloxAd').filter( ":visible" ).each(function(index, item) {
+		var id = $(item).attr('id');
+		var divClass = $(item).attr('class');
+		var adString = IDG.GPT.getLazyAdCode();
+		$(item).replaceWith("<div id=\"" + id + "\" class=\"lazyload_blox_ad " + divClass + "\">" + adString + "</div>");
+	});
+	try {
+		$("div.lazyload_blox_ad").lazyLoadAd({
+	        threshold    : 0,         // You can set threshold on how close to the edge ad should come before it is loaded. Default is 0 (when it is visible).
+	        forceLoad    : false,       // Ad is loaded even if not visible. Default is false.
+	        onLoad       : false,       // Callback function on call ad loading
+	        onComplete   : false,       // Callback function when load is loaded
+	        timeout      : 1500,        // Timeout ad load
+	        debug        : false,       // For debug use : draw colors border depends on load status
+	        xray         : false        // For debug use : display a complete page view with ad placements
+		}) ;
+	}
+	catch (exception){
+		console.log("error loading lazyload_ad " + exception);
+	}
+});
+
+</script>
+		
+
+	
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+
+
+<script type="text/javascript">
+$(function() {
+	var MOBILE_BREAK = 929;
+	
+	if ($(window).width() <= MOBILE_BREAK) {
+		executeDRRMobile();
+	} else {
+		// Desktop
+		executeDRRDesktop();
+	}
+});
+
+function executeDRRMobile() {
+	var TOP_IMU_HEIGHT = 250,
+		INTERMODULE_HEIGHT = 400,
+		GRAF_HEIGHT = 25,
+		MODULE_HEIGHT_BUFFER = 350,
+		AD_HEIGHT_BUFFER = 350,
+		RIGHT_PIXEL_WINDOW = 300,
+		DEBUG = false;
+	
+	var articleDRRModuleList = ["dealposts","insider.promo.direct"],
+		moduleUrls = [],
+		modules = [],
+		placementIndex = [],
+		moduleCounter = 0,
+		adPositions = new Array(0,1,3,5); // IMU, IMU, module, IMU, module, IMU++ 
+		cumulativeHeight = 0,
+		loopCounter = 0,
+		placementTarget = TOP_IMU_HEIGHT + MODULE_HEIGHT_BUFFER + GRAF_HEIGHT + INTERMODULE_HEIGHT; // IMU, IMU, module, IMU, module 
+	
+	if (true) {
+		var dealpostsIdx = articleDRRModuleList.indexOf("dealposts");
+		if (dealpostsIdx > -1) {
+			articleDRRModuleList.splice(dealpostsIdx, 1);
+			adPositions = [0, 1, 2, 4];
+		}
+	}
+	for (var i=0; i<articleDRRModuleList.length; i++) {
+		var articleDRRModuleName = articleDRRModuleList[i];
+		if (articleDRRModuleName == "products.latest-reviews") {
+			articleDRRModuleName += "&pageSize=3";
+			
+			articleDRRModuleName += "&categoryId=3248";
+			
+		} else if (articleDRRModuleName == "articles.latest-reviews") {
+			
+			articleDRRModuleName += "&categoryId=3248";
+			
+		} else if (articleDRRModuleName == "insider.promo.direct") {
+			var isPremium = false;//,
+			//showPromo = isPremium && (document.cookie.indexOf("nsdr") == -1);
+			showPromo = false;
+			articleDRRModuleName += "&pageSize=3&showPromo=" + showPromo;
+			
+			articleDRRModuleName += "&categoryId=3248";
+			
+		}
+		moduleUrls.push("/napi/tile?def=" + articleDRRModuleName + "&excludeCurrentArticle=true&excludeIds=2610314");
+	}
+	
+	if ($("figure.hero-img").height()) {
+		placementTarget += $("figure.hero-img").height();
+	}
+	// Add heights of all elements up through read these next (which is placed after eighth p tag) 
+	var firstModIndex = $("#drr-container > p:eq(7)").index();
+	$("#drr-container").children().slice(0, firstModIndex).each(function() {
+		placementTarget += $(this).height();
+	});
+	// Define first mobile ad here so imu counter shows imu1 first imu2 second, etc.
+	var firstMobileAdHtml = getLazyLoadAdHtml();
+
+	// Place Right-rail div containers 
+	$("#drr-container").children().each(function(index,value) {
+		//ignore any hidden elements in the body, like the mobile-only "read this next" module
+		if ($(this).is(':visible')) {
+			if (DEBUG) {
+				console.log($(this));
+			}
+			if (cumulativeHeight >= placementTarget) {
+				if (DEBUG) {
+					console.log("cumulativeHeight >= placementTarget and cumulativeHeight is " + cumulativeHeight + " and placementTarget is " + placementTarget);
+				}
+				var placementDiff = 0;
+				if ($.inArray(loopCounter, adPositions) != -1 || loopCounter >= 5) {
+					
+					try {
+                        IDG.GPT.addExtIMU();
+                        var adDivString;
+                        if (true) {
+                            adDivString = getLazyLoadAdHtml();
+                        } else {
+                            IDG.GPT.IMUCounter = IDG.GPT.IMUCounter + 1;
+                            var slotName = IDG.GPT.getIMUSlotName(),
+                                adString = "<div id='" + slotName + "'></div><script>$('#" + slotName + "').responsiveAd({screenSize:'971 1115', scriptTags: []});if (Object.keys(IDG.GPT.companions).length > 0) {IDG.GPT.refreshAd('" + slotName + "');}<\/script>";
+                            adDivString = "<div class='apart ad'>" + adString + "</div>";
+                            consent.ads.queue.push(function(){IDG.GPT.defineGoogleTagSlot(slotName ,[[320,50],[300,250],[300,50]],false,true);});
+                        }
+                        placementDiff = applyInsert($(this), adDivString);
+                        if (DEBUG) {
+                            console.log("Just placed an ad and the placementDiff is: " + placementDiff);
+                        }
+                        placementTarget = cumulativeHeight + placementDiff + INTERMODULE_HEIGHT + AD_HEIGHT_BUFFER;
+					}
+					catch (e){
+					    console.log("Error: "+e);
+                    }
+					
+				} 
+				else if (moduleCounter < articleDRRModuleList.length){
+					var elementId = "drr-mod-"+moduleCounter;
+					var moduleDivString = "<div id=\"" + elementId + "\" />";
+					modules.push(elementId);
+					
+					placementDiff = applyInsert($(this), moduleDivString);
+					if (DEBUG) {
+						console.log("Just placed a module and the placementDiff is: " + placementDiff);
+					}
+					placementTarget = cumulativeHeight + placementDiff + INTERMODULE_HEIGHT + MODULE_HEIGHT_BUFFER;
+					moduleCounter++;
+				}
+				loopCounter++;
+			}
+			// Avoid placing elements too soon due to non-large figures inflating the cumulative height
+			if ($(this).is("figure") && !$(this).is("figure.large")) {
+				cumulativeHeight += GRAF_HEIGHT;
+			}
+			else {
+				cumulativeHeight += $(this).height() + GRAF_HEIGHT;
+			}
+		}
+	});	// end $("#drr-container").children().each()
+		
+	// clone Related Stories module to come in after eighth para in article body for mobile breakpoint display
+	var $relatedStories = $('.related-promo-wrapper');
+	if ($relatedStories.length) {		
+		var $relatedStoriesClone = $relatedStories.clone();
+		$relatedStoriesClone.insertAfter( "#drr-container > p:eq(7)");	
+	}
+	
+	// For mobile only, place zipRecruiter after 8th paragraph.
+	var $zipRecruiter = $('.zip-recruiter-wrapper');
+	if ($zipRecruiter.length) {		
+		$zipRecruiter.insertAfter( "#drr-container > p:eq(8)");	
+	}
+	
+	if (false) {
+		var $dealPost = $('.dealpost-mod');
+		var $amazonWidget = $('#amazon-widget');
+			if ($dealPost.length && $amazonWidget.length) {
+				var $dealPostClone = $dealPost.remove();
+				var $amazonWidgetClone = $amazonWidget.remove();
+				$dealPostClone.insertAfter( "#drr-container > p:eq(7)");
+				$amazonWidgetClone.insertAfter($dealPostClone);
+			}
+	}
+	// For mobile only, place ad after second paragraph.
+	if (firstMobileAdHtml) {
+		$(firstMobileAdHtml).insertAfter("#drr-container > p:eq(1)");
+	}
+		
+	var $insiderPromo = $('.insider-promo-wrapper');
+	if ($insiderPromo.length) {		
+		var $insiderPromoClone = $insiderPromo.clone();
+		$insiderPromoClone.insertAfter( "#drr-container > p:eq(1)");
+	}
+
+	// Add Right rail module content
+	var placeModule = function( data ) {
+		var placementId = $(data).filter('div').attr('data-placement-id');
+		$( "#"+placementId ).html( data );
+	};
+	for (i=0; i<modules.length; i++) {
+		if (moduleUrls[i] !== undefined) {
+			$.get(moduleUrls[i]+"&divId="+modules[i], placeModule);
+		}
+	}
+	
+	$("div.lazyload_ad_article").lazyLoadAd({
+		threshold    : 0,
+		forceLoad    : false,       // Ad is loaded even if not visible. Default is false.
+		onLoad       : false,       // Callback function on call ad loading
+		onComplete   : false,       // Callback function when load is loaded
+		timeout      : 1500,        // Timeout ad load
+		debug        : false,       // For debug use : draw colors border depends on load status
+		xray         : false      // For debug use : display a complete page view with ad placements
+	});
+		
+	/*
+	* Increments imu counter and generates a 'name' based on count like imu2, imu3, etc.
+	* Returns the html and code script needed for the lazy load ad js.
+	*/
+	function getLazyLoadAdHtml() {
+		try {
+            var adString = IDG.GPT.getLazyAdCode(true);
+            return "<div class=\"apart ad lazyload_ad_article\">" + adString + "</div>";
+        }
+        catch(e) {
+		    console.log("Error: "+e);
+        }
+	}
+	
+	/** 
+	 * @param jqo Original jquery object target
+	 * @param divString The div to be inserted.
+	 * @return Difference in height between original placement target and final target.
+	 * Checks first 6 elements for an allowable placement (600 pixel window).
+	 * If none, place element in first location that does not follow a reject element.
+	 */
+	function applyInsert(jqo, divString) { 
+		if (DEBUG) {
+			console.log("applyInsert at top and jqo index is: " + jqo.index());
+		}
+		
+		for (var i=0; i<=6; i++) {
+			$thisElement = jqo.nextAll().andSelf().slice(i, i+1);
+			if (DEBUG) {
+				console.log("Checking first six and i is: " + i + " and this element index is " + $thisElement.index() );
+			}
+			if ($thisElement.index() < 0) {
+				break;
+			}
+			if (allowPlacement($thisElement)) {
+				return addElement(jqo, $thisElement, divString);
+			}  
+		}
+		if (DEBUG) {
+			console.log("No nearby allows so just place in first spot that is not after reject.");
+		}
+		var numElements = jqo.nextAll().length;
+		var startIndex = jqo.index();
+		for (var i=startIndex; i<=numElements; i++) {
+			var $element = $("#drr-container").children().eq(i);
+			// This element is eligible when not null, not in placement index, and previous element is not reject
+			if ($element != null && (placementIndex == null || placementIndex.indexOf(i) == -1) && !isReject($element.prev())) {
+				return addElement(jqo, $element, divString);
+			}
+		}
+		if (DEBUG) {
+			console.log("Not going to place element: return 0.");
+		}
+		return 0; 
+	}
+		
+	/**
+	 * @param jqo Original jquery object
+	 * @param allowElement Element that is good placement for module/ad
+	 * @param divString The div to be inserted before the good element
+	 * @return placementHeightDiff Diff in height between original placement target and current target.
+	 *
+	 * If element is not too close to the end the insert the div before allowable element. 
+	 * Add element index to placementIndex to keep track of which elements already have placements
+	 */
+	function addElement(jqo, allowElement, divString) {
+		var offset = allowElement.index() - jqo.index();
+		if (DEBUG) {
+			console.log("addElement: jqo index is " + jqo.index() + " allowElement index is " + allowElement.index());
+		}
+		
+		if (elementNotNearEnd(allowElement, RIGHT_PIXEL_WINDOW)) {
+			allowElement.before(divString);
+			if (DEBUG) {
+				console.log("addElement: Adding " + allowElement.index() + " to placementIndex.");
+			}
+			placementIndex.push(allowElement.index());
+			if (offset == 0) {
+				return 0;
+			}
+			else {
+				return getHeightDifference(jqo,allowElement);
+			}
+
+		}
+		else {
+			if (DEBUG) {
+				console.log("addElement: Near the end so do NOT add.");
+			}
+			return 0;
+		} 
+	}
+	
+	function getHeightDifference(jqo,allowElement) {
+		var offset = allowElement.index() - jqo.index(),
+			height = 0,
+			children = null;
+		if (offset > 0) {
+			children = $("#drr-container").children().slice(jqo.index(), allowElement.index());
+		}
+		else {
+			children = $("#drr-container").children().slice(allowElement.index(), jqo.index());
+		
+		}
+		if (children != null) {
+			children.each(function(i) {
+				if (DEBUG) {
+					console.log("About to add this element's height to heigh diff offset");
+					console.log($(this));
+				}
+	   			height += $(this).height() + GRAF_HEIGHT;
+			});
+		}
+		if (offset < 0) {
+			height *= -1;
+		}
+		if (DEBUG) {
+			console.log("getHeightDifference: offset was " + offset + " and height diff is : " + height);
+		}		
+		return height;
+	}
+	
+	function allowPlacement(jqo) {
+		if (jqo.prev() != null && isReject(jqo.prev())) {
+			return false;
+		}
+		return true;
+	}
+	
+	function isReject(jqo) {
+		if (jqo != null) {
+			if (jqo.is('h2') || jqo.is('h3') || jqo.is('h4') || jqo.is('h5')) {
+				if (DEBUG) {
+					console.log("isReject: found header");
+				}
+				return true;
+			}
+		}
+		return false;
+	}
+		 
+	// Returns true if height of all elements after this one is more than 500; false otherwise 
+	function elementNotNearEnd(element, pixelWindow) {
+		if (pixelWindow === null) {
+			pixelWindow = 500;
+		}
+		if (element === null) {
+			return false;
+		}
+		var remainingHeight = 0,
+			children = $("#drr-container").children().slice(element.index());
+		if (children === null) {
+			return false;
+		}
+		children.each(function(i){
+		   remainingHeight += $(this).height();
+		});
+		if ( remainingHeight > pixelWindow) {
+			return true;
+		}
+		else {
+			if (DEBUG) {
+				console.log("Element too close to end. Remaining height is: " + remainingHeight + " and window is " + pixelWindow);	 
+			}
+			return false;
+		}
+	}
+	
+} // end function executeDRRMobile()
+
+
+function executeDRRDesktop() {
+	
+	var heroImgHeight = $('figure.hero-img').outerHeight(true);
+	if (heroImgHeight === null) {
+		heroImgHeight = 0;
+	}
+	var galleryItemHeight = $('figure.thm-gallery').outerHeight(true);
+	if (galleryItemHeight === null) {
+		galleryItemHeight = 0;
+	}
+	var atAglanceTop = $('.at-a-glance.top').height();
+	if (atAglanceTop === null) {
+		atAglanceTop = 0;
+	}
+	
+	var drrContainerHeight = $('div#drr-container').outerHeight(true);
+
+	var topIMUheight = $('#topimu').height();
+	if (topIMUheight === 0) {
+		topIMUheight = 600;
+	}
+	var dealPostHeight;
+	var relatedPromoHeight;
+	
+		
+		
+			relatedPromoHeight = $('div.related-promo-wrapper').outerHeight(true);
+			if (relatedPromoHeight === null) {
+				relatedPromoHeight = 0;
+			}
+			dealPostHeight = 0;
+		
+	
+	
+	var zipRecruiterHeight = $('div.zip-recruiter-wrapper').outerHeight(true);
+	if (zipRecruiterHeight === null) {
+		zipRecruiterHeight = 0;
+	}
+	var videoHowtoHeight = $('div#video-howto-wrapper').outerHeight(true);
+	if (videoHowtoHeight === null) {
+		videoHowtoHeight = 0;
+	}
+	var teadsInreadHeight = $('div.teads-inread').height();
+	if (teadsInreadHeight === null) {
+		teadsInreadHeight = 0;
+	}
+	var unrulyAdHeight = $('.unruly_in_article_placement').height();
+	if (unrulyAdHeight === null) {
+		unrulyAdHeight = 0;
+	}
+	//just in case the in article ads are picked up...
+	var collapsibleAdHeight = unrulyAdHeight + teadsInreadHeight;
+
+	var workingRRheight = ( (heroImgHeight + galleryItemHeight + atAglanceTop + drrContainerHeight) - (topIMUheight + relatedPromoHeight + dealPostHeight + videoHowtoHeight + zipRecruiterHeight) );
+	
+	workingRRheight = workingRRheight - collapsibleAdHeight;
+	// if there is a gallery video remove the amount of space used to push the right rail down to accommodate the video in the RR (CAT-102)
+	if (galleryItemHeight > 0) {
+		workingRRheight = workingRRheight - 1400;
+	}
+	
+	var DEBUG = false;
+	
+	if (DEBUG) {
+		console.log('-----working RR height = ' + workingRRheight);
+	}
+	
+	var articleDRRModuleList = ["dealposts","insider.promo.direct"],
+		moduleUrls = [],
+		modules = [],
+		moduleCounter = 0,
+		loopCounter = 0;
+	var adPositions = new Array(0,1,3,5); // IMU, IMU, module, IMU, module, IMU++ 
+	
+	if (true) {
+		var dealpostsIdx = articleDRRModuleList.indexOf("dealposts");
+		if (dealpostsIdx > -1) {
+			articleDRRModuleList.splice(dealpostsIdx, 1);
+			adPositions = [0,1,2,4];
+		}
+	}
+	for (var i=0; i<articleDRRModuleList.length; i++) {
+		var articleDRRModuleName = articleDRRModuleList[i];
+		if (articleDRRModuleName == "products.latest-reviews") {
+			articleDRRModuleName += "&pageSize=3";
+			
+			articleDRRModuleName += "&categoryId=3248";
+			
+		} else if (articleDRRModuleName == "articles.latest-reviews") {
+			
+			articleDRRModuleName += "&categoryId=3248";
+			
+		} else if (articleDRRModuleName == "insider.promo.direct") {
+			var isPremium = false;//,
+				//showPromo = isPremium && (document.cookie.indexOf("nsdr") == -1);
+			showPromo = false;
+			articleDRRModuleName += "&pageSize=3&showPromo=" + showPromo;
+			
+			articleDRRModuleName += "&categoryId=3248";
+			
+		}
+		moduleUrls.push("/napi/tile?def=" + articleDRRModuleName + "&excludeCurrentArticle=true&excludeIds=2610314");
+	}
+	
+	// Place Right-rail div containers 
+	var numItems = 0;
+	var minRRHeight=1000;
+	
+	if (workingRRheight > minRRHeight) {
+		numItems = 1;
+		minRRHeight = 2000;
+	} 
+	if (workingRRheight > minRRHeight) {
+		numItems = 2;
+		minRRHeight = 3000;
+	} 
+	if (workingRRheight > minRRHeight) {
+		numItems = 3;
+		minRRHeight = 4000;
+	}
+	if (workingRRheight > minRRHeight) {
+		numItems = 4;
+		minRRHeight = 4700;
+	} 
+	while (workingRRheight > minRRHeight) {
+		numItems++;
+		minRRHeight+= 700;
+	}
+
+	for (var currIndex=0;currIndex<numItems;currIndex++) {
+
+		if ($.inArray(currIndex, adPositions) != -1 || currIndex >= 5) {
+			try {
+                IDG.GPT.addExtIMU();
+                var adDivString;
+                if (true) {
+                    if (currIndex < 4) {
+                    	var adString = "<code type=\"text\/javascript\">" +
+                        "<!--IDG.GPT.IMUCounter = IDG.GPT.IMUCounter + 1;IDG.GPT.addDisplayedAd(IDG.GPT.getIMUSlotName(), \"true\");" +
+                        "document.write('<div id=\"' +IDG.GPT.getIMUSlotName() + '\" class=\"ad-container\">');" +
+                        "consent.ads.queue.push(function(){IDG.GPT.defineGoogleTagSlot(IDG.GPT.getIMUSlotName(), [[300,250],[300,600]]);});" +
+                        "document.write('</div>');" +
+                        "consent.ads.queue.push(function(){$('#' + IDG.GPT.getIMUSlotName()).responsiveAd({screenSize:'971 1115', scriptTags: []});" +
+                        "if (Object.keys(IDG.GPT.companions).length > 0 || IDG.GPT.disableInitialLoad) { IDG.GPT.refreshAd(IDG.GPT.getIMUSlotName());}});//--></code>";
+                    	adDivString = "<div class=\"apart ad lazyload_ad_article\">" + adString + "</div>";
+                    }
+                    else { 
+                    	adDivString = getLazyLoadAdHtml();
+                    }
+                } else {
+                	consent.ads.queue.push(function(){
+	                    IDG.GPT.IMUCounter = IDG.GPT.IMUCounter + 1;
+	                    var slotName = IDG.GPT.getIMUSlotName(),
+	                        adString = "<div id='" + slotName + "'></div><script>$('#" + slotName + "').responsiveAd({screenSize:'971 1115', scriptTags: []});if (Object.keys(IDG.GPT.companions).length > 0 || IDG.GPT.disableInitialLoad) {IDG.GPT.refreshAd('" + slotName + "');}<\/script>";
+	                    adDivString = "<div class='apart ad'>" + adString + "</div>";
+	                    if (currIndex < 4) {
+	                    	IDG.GPT.defineGoogleTagSlot(slotName ,[[300,250],[300,600]],false,true);
+	                    }
+	                    else {
+	                    	IDG.GPT.defineGoogleTagSlot(slotName ,[[300,250]],false,true);
+	                    }
+                	});
+                }
+
+                //$('#drr-container > p').first().before(adDivString);
+                //$('#drr-top-ad').append(adDivString);
+                $(adDivString).appendTo('#drr-top-ad');
+                if (DEBUG) {
+                    console.log("-----Just placed an AD currIndex = " + currIndex);
+                }
+            }
+            catch (e) {
+			    console.log("Error: "+ e);
+            }
+		} 
+		else if (moduleCounter < articleDRRModuleList.length){
+			var elementId = "drr-mod-"+moduleCounter;
+			var moduleDivString = "<div id=\"" + elementId + "\" />";
+			modules.push(elementId);
+			
+			//$('#drr-container > p').first().before(moduleDivString);
+			$('#drr-top-ad').append(moduleDivString);
+			if (DEBUG) {
+				console.log("-----Just placed a MODULE and currIndex =  " + currIndex);
+			}
+			moduleCounter++;
+		}
+
+	} //end for loop	
+		
+	
+	// Add Right rail module content
+	var placeModule = function( data ) {
+		var placementId = $(data).filter('div').attr('data-placement-id');
+		$( "#"+placementId ).html( data );
+	};
+	for (i=0; i<modules.length; i++) {
+		if (moduleUrls[i] !== undefined) {
+			$.get(moduleUrls[i]+"&divId="+modules[i], placeModule);
+		}
+	}
+	
+	
+	$("div.lazyload_ad_article").lazyLoadAd({
+		threshold    : 0,
+		forceLoad    : false,       // Ad is loaded even if not visible. Default is false.
+		onLoad       : false,       // Callback function on call ad loading
+		onComplete   : false,       // Callback function when load is loaded
+		timeout      : 1500,        // Timeout ad load
+		debug        : false,       // For debug use : draw colors border depends on load status
+		xray         : false      // For debug use : display a complete page view with ad placements
+	});
+		
+	/*
+	* Increments imu counter and generates a 'name' based on count like imu2, imu3, etc.
+	* Returns the html and code script needed for the lazy load ad js.
+	*/
+	function getLazyLoadAdHtml() {
+		try {
+            var adString = IDG.GPT.getLazyAdCode(true);
+            return "<div class=\"apart ad lazyload_ad_article\">" + adString + "</div>";
+        }
+        catch (e){
+		    console.log("Error: " + e);
+        }
+	}
+	
+
+} // end function executeDRRDesktop()
+</script>
+
+
+
+
+
+
+	
+	
+		
+	
+
+
+
+
+
+	
+		
+			
+				
+			
+			
+			
+			
+		
+	
+	
+
+
+	
+	
+		<div id="drr-container" class='cat no-primary-image' itemprop="articleBody">
+	
+	
+	
+	
+
+	<p><em>Rare is the infrastructure that lacks open source software, but as we watch such new technologies as SDN move into our data centers, open source seems increasingly likely to penetrate every corner -- not just servers and applications, but networking, storage, and more.</em></p><p><em>Michael Bushong, vice president of marketing at SDN vendor Plexxi, sees the dominance of open source as inevitable. In this week's New Tech Forum, he walks us through his reasoning that open source will spread throughout IT. -- Paul Venezia</em></p><p> <strong>Open source as the future of IT</strong></p><aside id="fsb-1969" class="fakesidebar fakesidebar-auto"><strong>[ The InfoWorld review: <a href="https://www.infoworld.com/article/3106865/networking/review-6-slick-open-source-routers.html">6 slick open source routers</a>. ]</strong></aside><p>Open is playing an increasingly vital role in IT infrastructure. The current, dominant position of open source in server-side computing is well understood, and networking is now edging its way toward open source with the OpenDaylight movement. But is open source a natural evolutionary path for all IT disciplines, or do certain characteristics make some areas more attractive for open source than others?</p><p>When we think about networking as an industry, for example, we tend to compare its progress to the evolutionary track taken by the compute world. The assumption is that the networking industry will unfold in much the same way that the server industry did, marching past similar milestones. But this view of the world assumes that evolution follows a two-dimensional track, and industries are either parked somewhere along the continuum or they're moving toward a predetermined end.</p><p>But what if evolution doesn't follow some set schedule or even a singular path? If we assume that technological evolution is not predetermined, then what conditions drive an industry toward open source?</p><aside class="nativo-promo nativo-promo-1 smartphone" id=""> </aside><p>To address these questions, let's start by examining the three major drivers for broad open source adoption:</p><p> <strong>Single platform</strong></p><aside class="nativo-promo nativo-promo-1 tablet desktop" id=""> </aside><p>When lots of applications run on a single platform, that platform is primed for open source. For most platform plays, value and differentiation are not in the platform, but rather reside in what runs on top of the platform. It makes sense that, to the extent possible, vendors developing on a platform should leverage a common body of work. Re-creating foundational elements not unique is duplicative work that ultimately costs the end-user. Additionally, a common platform helps ensure that all applications on top of the platform can run in what ends up looking like a fairly ubiquitous execution environment. This is largely what drove the migration of compute toward Linux.</p><p>Contrary to popular belief, a platform that's open source and ubiquitous can also be lucrative. Companies like Red Hat have been successful at leveraging a broad installed base to generate solid revenue streams. That uniformity of the platform Red Hat supports helps ensure that its customer base is as large as possible. Even small deviations in the underlying platform would fracture Red Hat's customer base into smaller sets.</p><p> <strong>Single point of control</strong> </p><p>When a single point of control for a large number of infrastructure elements exists, that point of control lends itself well to open source. The value in a point of control lies either in managing very specific workflows (as with most single-vendor management platforms) or in broadly orchestrating workflows across disparate elements in heterogeneous environments (as with SDN controllers). The former tends toward tightly integrated management/execution solutions, while the latter provides a fertile breeding ground for open source.</p><aside class="nativo-promo nativo-promo-2 tablet desktop smartphone" id=""> </aside><p>By adopting an open source framework as a nexus of control, the community helps ensure that individual players do not end up with monopolistic control that can then be used to unduly influence decisions further down the technology stack. In essence, open source creates a very natural counterbalance to what would otherwise be competitive efforts to create "sticky" solutions.</p><p> <strong>Nascent technology</strong></p><p>Innovation is always important, but in a technology's formative stages, that innovation may not be focused in a particular direction. When the outcome is uncertain, the number of potential paths approaches infinity. During these times, the best thing for nascent technology is unbridled support. Open source allows the widest aperture for new ideas to come into the space, which makes it ideally suited for nascent technology spaces where iterative experimentation is necessary.</p><p>Open source does not preclude companies from creating protected innovations. Certainly, open source projects can be extended in commercial and even proprietary ways, depending on which open source license is in effect. But ultimately, open source ensures that access to the most important base concepts and foundational elements is uniform and open.</p><p> <strong>Driving the future</strong></p><p>With these drivers in mind, it's relatively straightforward to see why open source plays a large role in certain areas of IT. On the server side, the proliferation of applications and the desire for those applications to be portable was enough to ensure the emergence of an open source compute platform like Linux. Once performance was good enough, differentiation was always going to move to the applications, which made unique platform capabilities unnecessary for the lion's share of apps. Where performance or specialty capabilities remain important, there is still a small market for special operating environments.</p><p>As we look to networking, open source seems like a foregone conclusion as well. The push toward SDN makes the controller space especially receptive to open source. The desire to have a common control platform capable of near-ubiquitous deployment -- and with control hooks into a large number of heterogeneous elements -- is likely enough to guarantee a significant role for open source in networking. This is a large part of why projects like OpenDaylight hold such promise. The viability of proprietary, stand-alone control platforms in the face of a push toward orchestration and automation is questionable at best, except in the case of niche workflows.</p><p>Storage would seem to be the next logical vertical to be impacted by open source. With a trend toward federated storage clusters, there will be a need for a central control mechanism, not unlike that of SDN. A single point of control spanning heterogeneous architectures is ideally suited for open source efforts.</p><p>The point here is not that open source is a necessary, evolutionary step, but rather that open source becomes a key ingredient as conditions in a technology space favor the value that open source brings. Where there is commonality in platform or control, open source will thrive. Where specialization is critical, open source is less relevant. As companies look at their own open source participation, they should examine natural points of convergence. The conditions more than the projects are likely to determine the success of open source across the various technology areas of IT.</p><p><strong><em>New Tech Forum provides a means to explore and discuss emerging enterprise technology in unprecedented depth and breadth. The selection is subjective, based on our pick of the technologies we believe to be important and of greatest interest to InfoWorld readers. InfoWorld does not accept marketing collateral for publication and reserves the right to edit all contributed content. Send all enquiries to <a href="mailto:newtechforum@infoworld.com" rel="nofollow">newtechforum@infoworld.com</a>.</em></strong></p><p><em>This article, "<a href="http://www.infoworld.com/t/open-source-software/why-open-source-will-rule-the-data-center-235733?source=footer">Why open source will rule the data center</a>," was originally published at <a href="http://www.infoworld.com/?source=footer">InfoWorld.com</a>. For the latest business technology news, follow <a href="http://twitter.com/infoworld" target="_blank" rel="nofollow">InfoWorld.com on Twitter</a>.</em></p>
+
+	
+	
+		
+	
+	
+	
+	
+		
+		
+		
+		
+
+
+
+
+
+
+
+
+
+
+<div class="end-note">
+	
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- blx4 #2002 blox4.html  -->
+			
+
+		
+			
+				
+					
+					
+					
+						
+							
+					
+						
+					
+					
+					
+					
+					
+					
+						
+					
+				
+				
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+			<div id="" class="blx blxParticleendnote blxM2002  blox4_html  blxC24991"> </div>
+		
+	
+
+	
+
+
+</div>
+	
+	
+</div>
+
+
+
+
+
+<script>
+$("a[data-product-id]").on('click',function(e){
+	var e = e || window.event;
+	var dataLayer = window.dataLayer = window.dataLayer || [];
+	var prodName = $(this).attr("data-product-name");
+	prodName = prodName.replace("\\'","'"); // to counter the effects of over-escaping
+	
+	if ( $(this).parents('.slideshow').length > 0 ) {
+		var productLinkPosition = "Slideshow";
+	} else if ( $(this).parents('.emo-sb').length > 0 ) {
+		var productLinkPosition = "Product Sidebar";
+	} else if ( $(this).parents('.at-a-glance.top').length > 0 ) {
+		var productLinkPosition = "AAG Top";
+	} else if ( $(this).parents('.at-a-glance').length > 0 ) {
+		var productLinkPosition = "AAG Bottom";
+	} else if ( $(this).parents('.quick-hits.medium').length > 0 ) {
+		var productLinkPosition = "Quick Hit Medium";
+	} else if ( $(this).parents('.quick-hits').length > 0 ) {
+		var productLinkPosition = "Quick Hit Full";
+	} else if ( $(this).parents('.product-chart').length > 0 ) {
+		var productLinkPosition = "Product Chart";
+	} else if ( $(this).parents('.emo-list').length > 0 ) {
+		var productLinkPosition = "Product List";
+	} else {
+		var productLinkPosition = "Body Text";
+	}
+	
+	dataLayer.push({
+		'event': 'affiliateLink', 
+	  	'eventCategory': 'Affiliate Link', // Hardcoded, not dynamic
+	  	'eventAction': 'Click', // Hardcoded, not dynamic
+	  	'eventLabel': ''+e.target+'', // The URL the affiliate link leads to
+	  	'productVendor': $(this).attr("data-bkvndr"), // The vendor of the product
+	  	'productManufacturer': $(this).attr("data-bkmfr"), // The manufacturer of the product
+	  	'productName': prodName, // The name of the product
+	  	'productId': $(this).attr("data-product-id"), // The ID of the product
+	  	'productLinkPosition': productLinkPosition // location of product link (Product Sidebar, Product Chart, etc.)
+	});
+	
+	
+	
+});
+</script>
+
+
+	<script>
+$("#drr-container a:not('[data-product-id]')").on('click',function(e){
+	var dataLayer = window.dataLayer = window.dataLayer || [];
+	
+	var $clickEl = $(this);
+	var clickUrl = $clickEl.attr("href");
+	var clickParentsUntilDrr = $clickEl.parentsUntil("#drr-container");
+	var clickText = $clickEl.text().trim();
+	var linkLocation;
+	var linkType;
+	var regex = new RegExp("cio.com|csoonline.com|computerworld.com|itnews.com|itworld.com|infoworld.com|networkworld.com|javaworld.com|techconnect.com|techhive.com|macworld.com|pcworld.com|greenbot.com|gamestar.com", "i");
+	
+	if (clickParentsUntilDrr.hasClass("fakesidebar")) {
+		linkLocation = "FSB";
+	}
+	else if (clickParentsUntilDrr.hasClass("end-note")) {
+     	 linkLocation = "End Note";
+   }
+	else {
+		linkLocation = "Body";
+	}
+	
+	if (regex.test(clickUrl)) {
+	      linkType = "Internal";
+	    }
+	else {
+		linkType = "External";
+	}
+		
+	
+	dataLayer.push({
+		'event': 'editBodyLink', 
+	  	'eventCategory': 'Editorial Body Links',
+	  	'eventAction': linkType,
+	  	'eventLabel': linkLocation+" | "+clickText+" | "+clickUrl
+	});
+});
+</script>
+
+
+<script>
+$("#drr-top-ad .related-promo-wrapper .title > a").on('click',function(e){
+	var dataLayer = window.dataLayer = window.dataLayer || [];
+	
+	var $clickEl = $(this);
+	var clickUrl = $clickEl.attr("href");
+	var clickText = $clickEl.text().trim();
+	var linkLocation = "Promo";		
+	
+	dataLayer.push({
+		'event': 'promoModuleLink', 
+	  	'eventCategory': 'Promotion module',
+	  	'eventAction': 'Click',
+	  	'eventLabel': linkLocation+" | "+clickText+" | "+clickUrl
+	});
+});
+</script>
+
+
+
+
+
+
+    <div class="apart-alt tags">
+    <span class="related">Related: </span>
+    <ul>
+		
+			<li><a class="edition-link-url primary-cat-url2" href="/category/open-source-tools"><span class="primary-cat-name2">Open Source</span></a></li>
+		
+			<li><a class="edition-link-url primary-cat-url2" href="/category/linux"><span class="primary-cat-name2">Linux</span></a></li>
+		
+			<li><a class="edition-link-url primary-cat-url2" href="/category/data-center"><span class="primary-cat-name2">Data Center</span></a></li>
+		
+			<li><a class="edition-link-url primary-cat-url2" href="/category/it-strategy"><span class="primary-cat-name2">IT Strategy</span></a></li>
+		
+			<li><a class="edition-link-url primary-cat-url2" href="/category/software-defined-networking"><span class="primary-cat-name2">SDN</span></a></li>
+		 
+		
+			
+			
+				 
+					 
+			    				
+				
+			
+				
+		
+    </ul>
+   
+	</div>
+
+
+
+
+
+
+
+
+
+		
+   		
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="brand-social">
+		<div class="follow-text">Follow everything from InfoWorld</div>
+		<ul class="social-links">
+			
+			<li>
+				<a href="https://twitter.com/infoworld" class="twitter-follow" target="_blank">
+					<i class="ss-icon ss-social ss-twitter"></i>
+				</a>
+			</li>
+			
+			
+			<li>
+				<a href="https://www.facebook.com/InfoWorld" class="facebook-follow" target="_blank">
+					<i class="ss-icon ss-social ss-facebook"></i>
+				</a>
+			</li>
+			
+			
+			<li>
+				<a href="https://www.linkedin.com/company/164364" class="linkedin-follow" target="_blank">
+					<i class="ss-icon ss-social ss-linkedin"></i>
+				</a>
+			</li>
+			
+			
+			<li>
+				<a href="/index.rss" class="rss">
+					<i class="ss-icon ss-social ss-rss"></i>
+				</a>
+			</li>
+			
+		</ul>
+	</div>
+
+
+   		
+   		
+		
+
+
+
+
+	 
+
+
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		<!-- blx4 #1172 blox4.html  -->
+			
+
+		
+			
+				
+					
+					
+					
+						
+							
+					
+						
+					
+					
+					
+					
+					
+					
+						
+					
+				
+				
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<div class="article-intercept">
+	<ul><li><a href="https://www.infoworld.com/newsletters/signup.html">Stay up to date with InfoWorld’s newsletters for software developers, analysts, database programmers, and data scientists</a>.</li><li><a href="https://www.infoworld.com/insider/">Get expert insights from our member-only Insider articles</a>.</li></ul>
+	</div>
+	
+
+	
+
+
+
+
+
+<script src="/www/js/video/embedder-jwp.js?v=20190415112431"></script>
+
+
+	
+	
+	
+	
+
+
+
+
+					
+
+
+
+
+
+
+
+
+
+
+				
+			
+		
+		</section><!-- /.bodee -->
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="content-recommender">
+	<div class="OUTBRAIN" data-widget-id="AR_1" data-ob-template="InfoWorld"></div>  
+</div>
+<script>
+	var obEdition = edition ||  countryCode || '';
+	var widgetId="";
+	
+	if (obEdition === "asean") {
+		widgetId="AR_3"
+		if ($("body").hasClass("slideshow")) {
+			widgetId="AR_4"
+		}
+	}
+	if (widgetId !== "") {
+		$(".OUTBRAIN").attr("data-widget-id", widgetId);
+	}
+	$.getScript("//widgets.outbrain.com/outbrain.js");
+</script>
+
+
+				
+				
+			
+			
+		
+
+		
+			
+			
+		
+			
+				
+					
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+ 	
+		
+		<div class="lazyload_ad">
+		<code type="text/javascript">
+		<!--
+		document.write('<div id="ciu" class=" ad-container">');
+		consent.ads.queue.push(function(){
+		IDG.GPT.addDisplayedAd("ciu", "true");
+		IDG.GPT.addLazyloadedAd("ciu", "true");
+		});
+		document.write('</div>');
+		consent.ads.queue.push(function(){
+		$('#ciu').responsiveAd({screenSize:'971 1115', scriptTags: []});
+		if (Object.keys(IDG.GPT.companions).length > 0 || IDG.GPT.disableInitialLoad) {
+			IDG.GPT.refreshAd('ciu');
+		}
+		});
+		//-->
+		</code>
+		</div>
+ 	
+ 
+  
+							
+	
+	
+
+
+	
+		
+	<link rel="stylesheet" href="/www.idge/css/sponsored-links.css?v=20190415112431" />
+	<link rel="stylesheet" href="/www.idge.ifw/css/sponsored-links.css?v=20190415112431" />
+
+
+<section id="resources-sponsored-links">
+	
+	
+ 	<section class="sponsored-links">
+ 	  <div class="head">Sponsored Links</div>
+	 	
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<ul class="first">
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+
+	
+
+
+
+
+<li>
+	<a rel="nofollow" target="_blank" href="http://pubads.g.doubleclick.net/gampad/clk?id=4893149404&iu=/8456/IDG.US_E_InfoWorld.com" >
+		dtSearch® instantly searches terabytes of files, emails, databases, web data.  See site for hundreds of reviews; enterprise & developer evaluations
+	</a>
+</li>
+				
+				
+			
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+
+
+
+
+<li>
+	<a rel="nofollow" target="_blank" href="http://pubads.g.doubleclick.net/gampad/clk?id=4959124989&iu=/8456/IDG.US_E_InfoWorld.com" >
+		The future of ITSM is Cognitive Services.
+	</a>
+</li>
+				
+				
+			
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+
+
+
+
+<li>
+	<a rel="nofollow" target="_blank" href="http://pubads.g.doubleclick.net/gampad/clk?id=5030495992&iu=/8456/IDG.US_E_InfoWorld.com" >
+		Humanizing the Digital Experience
+	</a>
+</li>
+				
+				
+			
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+
+
+</ul><ul>
+
+<li>
+	<a rel="nofollow" target="_blank" href="http://pubads.g.doubleclick.net/gampad/clk?id=5030507248&iu=/8456/IDG.US_E_InfoWorld.com" >
+		The Modern IT Infrastructure Insight Report
+	</a>
+</li>
+				
+				
+			
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+
+
+
+
+<li>
+	<a rel="nofollow" target="_blank" href="http://pubads.g.doubleclick.net/gampad/clk?id=5030521411&iu=/8456/IDG.US_E_InfoWorld.com" >
+		Rising to the Security in the Cloud Challenge
+	</a>
+</li>
+				
+				
+			
+		
+			
+			
+				
+					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+							
+						
+						
+						
+						
+						
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+
+
+
+
+
+
+
+
+<li>
+	<a rel="nofollow" target="_blank" href="http://pubads.g.doubleclick.net/gampad/clk?id=5030447679&iu=/8456/IDG.US_E_InfoWorld.com" >
+		5 Great Reasons to Make Electronic Signatures Part of Your Business
+	</a>
+</li>
+				
+				
+			
+		
+	</ul>
+
+
+
+
+ 	</section>
+</section>
+	
+	
+
+
+		</article>
+
+	</section><!-- /role=main -->
+
+</div><!-- /#page-wrapper -->
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+	<link rel="stylesheet" href="/www.idge/css/foot.css?v=20190415112431" />
+	<link rel="stylesheet" href="/www.idge.ifw/css/foot.css?v=20190415112431" />
+
+<footer>
+    <section class="brand" itemscope itemtype="http://schema.org/Organization">
+   	
+   		<link itemprop="url" href="http://www.infoworld.com"> 
+        <a href="/"><span class="logo">InfoWorld</span></a>
+		<span class="tagline"> </span>
+        
+        
+	        <span class="follow">
+				<label>Follow us</label>
+	            	<ul>
+	            		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		<li><a class="social-media-tw-foot" href="https://twitter.com/infoworld" itemprop="sameAs" rel="nofollow" target="_blank" onclick="brandFollowTrack('Twitter')"><i class="ss-icon ss-social-circle ss-twitter"></i></a></li>
+	
+	
+	
+		<li><a class="social-media-li-foot" href="https://www.linkedin.com/company/164364" itemprop="sameAs" rel="nofollow" target="_blank" onclick="brandFollowTrack('LinkedIn')"><i class="ss-icon ss-social-circle brand ss-linkedin"></i></a></li>
+	
+	
+	
+		<li><a class="social-media-fb-foot" href="https://www.facebook.com/InfoWorld" itemprop="sameAs" rel="nofollow" target="_blank" onclick="brandFollowTrack('Facebook')"><i class="ss-icon ss-social-circle brand ss-facebook"></i></a></li>				
+	
+	
+	
+	
+	
+	
+	
+		<li><a href="/index.rss" target="_blank"><i class="ss-icon ss-social-circle ss-rss"></i></a></li>
+	
+	
+	
+		<li><a href="/newsletters/signup.html"><i class="ss-icon ss-social-circle ss-mail"></i></a></li>
+	
+
+<script>
+if (facebookUrl != null || facebookUrl != "") {
+	document.querySelector(".social-media-fb-foot").setAttribute("href", facebookUrl);
+}
+if (twitterUrl != null || twitterUrl != "") {
+	document.querySelector(".social-media-tw-foot").setAttribute("href", twitterUrl);
+}
+if (document.querySelector(".social-media-li-foot") != null) {
+	if (typeof linkedInUrl !== "undefined" || linkedInUrl != null || linkedInUrl != "") {
+		document.querySelector(".social-media-li-foot").setAttribute("href", linkedInUrl);
+	}
+}
+</script>
+	            	</ul>
+	        </span>
+        
+        
+    </section>
+    	
+    <section class="topics">
+    	
+			
+		        
+		        <nav id="ft1">
+		            <ul>
+						
+							
+							
+		    			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+			
+				<li><a href="/category/analytics/">Analytics</a>
+					
+				</li>
+			
+				<li><a href="/category/careers/">Careers</a>
+					
+				</li>
+			
+				<li><a href="/category/cloud-computing/">Cloud Computing</a>
+					
+				</li>
+			
+				<li><a href="/category/containers/">Containers</a>
+					
+				</li>
+			
+				<li><a href="/category/data-management/">Data Management</a>
+					
+				</li>
+			
+				<li><a href="/category/machine-learning/">Machine Learning</a>
+					
+				</li>
+			
+				<li class="selected"><a href="/category/open-source-tools/" class="active">Open Source</a>
+					
+				</li>
+			
+				<li><a href="/category/application-development/">Software Development</a>
+					
+				</li>
+			
+		
+	
+	
+	
+
+		            </ul>
+		        </nav>
+		        
+	        
+        
+        
+        <nav id="ft2">
+            <ul>
+           		
+           		
+
+
+
+
+
+
+
+
+
+
+<li><a href="/news">News</a></li>
+<li><a href="/blogs">Blogs</a></li>
+<li><a href="/reviews">Reviews</a></li>
+<li><a href="/insider">Insider</a></li>
+<li><a href="/resources">Resources</a></li>
+<li><a href="/newsletters/signup.html">Newsletters</a></li>
+           		
+            </ul>
+        </nav>
+        
+        
+			
+		
+    </section>
+    
+    
+    <section class="about">
+		<div class="wrapper"> 
+        	<nav class="tertiary" id="ft3">
+            	<ul>
+            		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a class="edition-link-url" href="/about/about.html"  >About Us</a>
+
+<li><a class="edition-link-url" href="/about/contactus.html"  >Contact</a>
+
+<li><a class="edition-link-url" href="/about/privacy.html"  >Privacy Policy</a>
+
+<li><a class="edition-link-url" href="/about/cookie-policy.html"  >Cookie Policy</a>
+
+<li><a class="edition-link-url" href="/about/member-preferences.html"  >Member Preferences</a>
+
+<li><a class="edition-link-url" href="https://www.idg.com/advertise-with-us/infoworld/" target="_blank" rel="nofollow" >Advertising</a>
+
+<li><a class="edition-link-url" href="https://www.idg.com/work-here/" target="_blank" rel="nofollow" >IDG Careers</a>
+
+<li><a class="edition-link-url" href="/about/adchoices.html"  >Ad Choices</a>
+
+<li><a class="edition-link-url" href="/about/affiliates.html"  >E-commerce Links</a>
+
+
+
+
+            	</ul>
+        	</nav>
+		</div>
+	</section>
+	
+    <section class="copyright">
+        <div class="wrapper">
+			
+        	
+        
+        	
+        	<p><a href="/about/copyright.html">Copyright</a> &copy; 2019 IDG Communications, Inc.</p>
+			<div class="network">
+				<div id="network-selector">
+                <div class="label">Explore the IDG Network <i class="ss-icon tick">descend</i></div>
+                <ul>
+                	
+                		
+                		
+                	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		<li><a href="https://www.cio.com" target="_blank" rel="nofollow">CIO</a></li>
+	
+		<li><a href="https://www.computerworld.com" target="_blank" rel="nofollow">Computerworld</a></li>
+	
+		<li><a href="https://www.csoonline.com" target="_blank" rel="nofollow">CSO</a></li>
+	
+		<li><a href="https://www.idc.com" target="_blank" rel="nofollow">IDC</a></li>
+	
+		<li><a href="https://www.idg.com" target="_blank" rel="nofollow">IDG</a></li>
+	
+		<li><a href="https://www.idgconnect.com" target="_blank" rel="nofollow">IDG Connect</a></li>
+	
+		<li><a href="https://www.infoworld.com" target="_blank" rel="nofollow">InfoWorld</a></li>
+	
+		<li><a href="https://www.itwhitepapers.com" target="_blank" rel="nofollow">ITwhitepapers</a></li>
+	
+		<li><a href="https://www.javaworld.com" target="_blank" rel="nofollow">JavaWorld</a></li>
+	
+		<li><a href="https://www.networkworld.com" target="_blank" rel="nofollow">Network World</a></li>
+	
+
+                </ul>
+				</div><!-- /#network-selector -->
+			</div><!-- /.network -->
+		</div><!-- /.wrapper -->
+    </section>
+</footer>
+
+
+<script src="/www/js/jquery/jquery-ui.js"></script>
+<script src="/www/js/jquery/jquery.dfp.min.js"></script>
+<script src="/www.idge/js/mule/shortstack_nav.js"></script>
+
+
+
+
+	
+		
+			
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+			
+			
+			
+			
+			
+				<div id="mobilewelcomead" class=" ad-container">					
+				</div>				
+				<script type="text/javascript">
+				consent.ads.queue.push(function(){
+				
+					IDG.GPT.addDisplayedAd("mobilewelcomead", "true");
+					$('#mobilewelcomead').responsiveAd({screenSize:'971 1115', scriptTags: []});
+                    IDG.GPT.log("Creating ad: mobilewelcomead - [971 1115]");
+				
+				});
+				</script>
+			
+		
+	
+ 	
+ 
+ 
+	
+
+
+
+	<script src="/www/js/ads/parallaxLb.js"></script>
+	<script>
+		
+		(function(){
+			var brandName = 'ifw';
+			var parallaxArgs = {
+				topNavEl: 'sticky-head',
+				topNavIsSticky: true,
+				leaderboadrdId: 'topleaderboard', 
+				adContainer: 'viewabilityAdContainer',
+				adUnit: 'viewabilityAdUnit',
+				viewabilityTime: (brandName=='ctw') ? 10000 : 7000
+			}
+			parallaxLb(parallaxArgs);
+		})();
+		
+	</script>
+
+
+<script src="/www/js/analytics/tracking.js"></script>
+<script src="/www/js/autocomplete.js"></script>
+
+
+	<script src="/www.idge/js/social_sidecar.js"></script>
+	<script src="/www.idge/js/jquery/plugins/jquery.colorbox-min.js"></script>
+	<script src="/www.idge/js/article.js?v=20190415112431"></script>
+	
+	<script src="/www/js/prettify.js"></script>
+	<script src="/www.idge/js/jquery/responsive-tables.js"></script>
+	<script src="/www.idge/js/jquery/jquery.tablesorter.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$("table.tablesorter").tablesorter({
+			widgets: ['zebra']
+		});
+		
+		$("table.tablesorter tbody tr").hover(function() {
+			$(this).toggleClass("selected");
+		});
+		
+		$("table.tablesorter thead tr th").each(function(){			
+			if ($(this).find('.ss-icon').length < 1) {
+				$(this).append('<i class="ss-icon"></i>');
+			}
+		});
+		
+	});
+	</script>
+
+
+
+
+<script src="/www/js/jquery/jquery.lazyload.min.js"></script>
+<script src="/www.idge/js/global.js?v=20190415112431"></script>
+<script src="/www/js/webfonts/ss-social.js"></script>
+<script src="/www/js/webfonts/ss-standard.js"></script>
+<script src="/www/js/analytics/brandAnalytics.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+			
+			
+			
+			
+			
+				<div id="catfish" class=" ad-container">					
+				</div>				
+				<script type="text/javascript">
+				consent.ads.queue.push(function(){
+				
+					IDG.GPT.addDisplayedAd("catfish", "true");
+					$('#catfish').responsiveAd({screenSize:'971 1115', scriptTags: []});
+                    IDG.GPT.log("Creating ad: catfish - [971 1115]");
+				
+				});
+				</script>
+			
+		
+	
+ 	
+ 
+ 
+			
+				
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+		
+			
+			
+				<!--  Begin gpt-skin/inread -->
+				<div id="gpt-skin" class=" ad-container">					
+				</div>
+				<script type="text/javascript">
+				consent.ads.queue.push(function(){
+					IDG.GPT.addDisplayedAd("gpt-skin", "true");
+					IDG.GPT.displayGoogleTagSlot('gpt-skin');
+				});
+				</script>
+				<!--  End gpt-skin/inread -->	
+			
+			
+			
+			
+		
+	
+ 	
+ 
+ 
+		
+	
+
+
+
+<script type="text/javascript" src="/www/js/ads/jquery.lazyload-ad.js"></script>
+
+
+<script type="text/javascript">
+// -- Load Lazy Advertisement placement as deferred
+$("div.lazyload_ad").lazyLoadAd({
+        threshold    : 0,         // You can set threshold on how close to the edge ad should come before it is loaded. Default is 0 (when it is visible).
+        forceLoad    : false,       // Ad is loaded even if not visible. Default is false.
+        onLoad       : false,       // Callback function on call ad loading
+        onComplete   : false,       // Callback function when load is loaded
+        timeout      : 1500,        // Timeout ad load
+        debug        : false,       // For debug use : draw colors border depends on load status
+        xray         : false        // For debug use : display a complete page view with ad placements
+}) ;
+</script>
+
+
+
+<script type='text/javascript'>
+
+		$('#resources-sponsored-links').addClass('show');
+	
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+	
+	
+		
+	
+	
+
+<!-- Begin comScore Tag -->
+<script>
+var _comscore = _comscore || [];
+_comscore.push(
+{ c1: "2", c2: "6035308", c3: "", c5: "Open Source", c6: "Article: Analysis", c15: "2610314" });
+(function()
+{
+	var s = document.createElement("script"), el = document.getElementsByTagName("script")[0];
+	s.async = true; s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+	el.parentNode.insertBefore(s, el);
+})();
+</script>
+<noscript>
+<img src="https://sb.scorecardresearch.com/p?c1=2&c2=6035308&cv=2.0&cj=1" />
+</noscript>
+<!-- End comScore Tag -->
+
+
+	<!-- LiveRamp Sources -->
+	<script src="/www/js/utils/liveRamp.js"></script>
+	<!-- End of LiveRamp -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+consent.digitalelement.queue.push(function(){
+	$thm.logPlEvent({"b":"ifw","e":"view","t":"article","id":"2610314"});
+	
+});
+</script>
+
+		<div id="loginModal"></div>
+		<div id="logoffModal"></div>
+
+		
+		
+		
+		<script type="text/javascript">
+			a=top;f=self;
+			var acceptedDomains = ["lookbookhq.com"];
+			var cleanedHost = a.location.hostname.split(".").slice(-2).join(".");
+			if(a!=f && acceptedDomains.indexOf(cleanedHost) < 0) {
+				a.location=f.location;
+			}
+		</script>			
+
+	</body>
+</html>

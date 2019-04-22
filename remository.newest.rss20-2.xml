@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- generator="FeedCreator 1.7.2" -->
+<rss version="2.0">
+	<channel>
+		<title>Recent Files</title>
+		<description>Latest from our file repository</description>
+		<link>http://www.cosa.org.tw/index.php?option=com_remository&amp;Itemid=28</link>
+		<lastBuildDate>Mon, 22 Apr 2019 13:58:00 +0100</lastBuildDate>
+		<generator>FeedCreator 1.7.2</generator>
+		<image>
+			<url>http://www.cosa.org.tw/components/com_remository/images/header.gif</url>
+			<title>COSA - 中華民國開放系統協會 :: 文件庫</title>
+			<link>http://www.cosa.org.tw/index.php?option=com_remository&amp;Itemid=28</link>
+			<description>COSA - 中華民國開放系統協會</description>
+		</image>
+	</channel>
+</rss>

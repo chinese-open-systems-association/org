@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2" -->
+<opml xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<head>
+		<title>中華民國開放系統協會主網站</title>
+	</head>
+	<body>
+	<outline type="rss"  title="「SQL Server 2008 EOS」研討會" text="「SQL Server 2008 EOS」研討會" url="http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=92"/>
+	<outline type="rss"  title="從開放城市談智慧交通之未來" text="從開放城市談智慧交通之未來" url="http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=91"/>
+	<outline type="rss"  title="人工智慧面面觀座談會" text="人工智慧面面觀座談會" url="http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=90"/>
+	<outline type="rss"  title="中文編碼與應用研討會" text="中文編碼與應用研討會" url="http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=89"/>
+	<outline type="rss"  title="開放資料座談會" text="開放資料座談會" url="http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=88"/>
+	</body>
+</opml>

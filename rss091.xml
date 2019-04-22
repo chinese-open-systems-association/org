@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2" -->
+<rss version="0.91">
+	<channel>
+		<title>中華民國開放系統協會主網站</title>
+		<description>這是COSA成立的主網站</description>
+		<link>http://www.cosa.org.tw</link>
+		<lastBuildDate>Mon, 22 Apr 2019 13:04:18 +0100</lastBuildDate>
+		<generator>FeedCreator 1.7.2</generator>
+		<image>
+			<url>http://www.cosa.org.tw/images/M_images/joomla_rss.png</url>
+			<title>Powered by Joomla!</title>
+			<link>http://www.cosa.org.tw</link>
+			<description>這是COSA成立的主網站</description>
+		</image>
+		<item>
+			<title>「SQL Server 2008 EOS」研討會</title>
+			<link>http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=92</link>
+			<description>「SQL Server 2008 EOS」研討會      主辦單位：中華民國開放系統協會     簡報下載  SQL Server 2017...</description>
+			<category>新聞 - 最新新聞</category>
+			<pubDate>Mon, 04 Mar 2019 20:25:01 +0100</pubDate>
+		</item>
+		<item>
+			<title>從開放城市談智慧交通之未來</title>
+			<link>http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=91</link>
+			<description>報名網址 (107SMART-TRANSPORT.php)  簡報下載: 01-吳榮煌-我國智慧交通之回顧與展望 (https://drive.google.com/open?id=17HTfn2EMbQhSLbH4TOlriyaIqTwYVOe2) 02-唐經洲-先進駕駛輔助系統 (ADAS)-以CAN BUS為例 (https://drive.google.com/open?id=1h_CGPtESii0CcTwqqkSEX4dKwmHPOQrt) 03-胡鈞祥-連網自駕車 (https://drive.google.com/open?id=1LG1n0qlg6C1ZYKzNY7Vhj0mT2Df4uD_e) 04-陳俊雄-Auto_Sensors_Release_LITEON_Darren (https://drive.google.com/open?id=1I9Ev_ZSHgUkC2Mo2JV5iuV3ez7wZDB_T) 05-陳柏全-Dynamics Control of Autonomous...</description>
+			<category>新聞 - 最新新聞</category>
+			<pubDate>Fri, 26 Oct 2018 10:50:19 +0100</pubDate>
+		</item>
+		<item>
+			<title>人工智慧面面觀座談會</title>
+			<link>http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=90</link>
+			<description>人工智慧面面觀座談會影片連結：       人工智慧面面觀Part1      人工智慧面面觀Part2...</description>
+			<category>新聞 - 自由軟體導入方案</category>
+			<pubDate>Wed, 19 Sep 2018 17:22:25 +0100</pubDate>
+		</item>
+		<item>
+			<title>中文編碼與應用研討會</title>
+			<link>http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=89</link>
+			<description>
+ 資訊系統用字編入ISO/IEC 10646國際編碼標準
+與應用研討會
+
+
+
+
+
+主辦單位：經濟部標準檢驗局 
+協辦單位：中華民國開放系統協會 
+承辦單位：財團法人中文數位化技術推廣基金會(中推會) 
+
+
+報名網址 (http://www.cosa.org.tw/106OSE.php)
+
+
+	
+
+地點：
+集思台大會議中心亞歷山大廳
+	台北市羅斯福路四段85號B1	(捷運公館站旁) 時間：106年11月24日(五)14:00~17:00
+
+
+</description>
+			<category>新聞 - 最新新聞</category>
+			<pubDate>Sat, 28 Oct 2017 16:31:51 +0100</pubDate>
+		</item>
+		<item>
+			<title>開放資料座談會</title>
+			<link>http://www.cosa.org.tw/index.php?option=com_content&amp;task=view&amp;id=88</link>
+			<description>開放資料座談會 時間：106年8月18日(五)15:00~17:00地點：孫運璿科技･人文紀念館           台北市重慶南路二段6巷10號...</description>
+			<category>新聞 - 自由軟體導入方案</category>
+			<pubDate>Mon, 24 Jul 2017 21:57:06 +0100</pubDate>
+		</item>
+	</channel>
+</rss>
